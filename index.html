@@ -228,14 +228,14 @@
             <h2>Essays</h2>
             <div class="work-item">
                 <div class="work-title">
-                    <a href="#" onclick="showFullText('essay1')">"The Importance of Interdisciplinarity: Reflections from Studying Abroad"</a>
+                    <a href="essay1.html">"The Importance of Interdisciplinarity: Reflections from Studying Abroad"</a>
                 </div>
                 <div class="work-meta">Fall 2024 • <a href="#" target="_blank">HHIVE Website</a></div>
                 <div class="work-description">An exploration of interdisciplinary learning through the lens of international academic experience.</div>
             </div>
             <div class="work-item">
                 <div class="work-title">
-                    <a href="#" onclick="showFullText('essay2')">"Antimicrobial Resistance Efforts and How We're Helping"</a>
+                    <a href="essay2.html">"Antimicrobial Resistance Efforts and How We're Helping"</a>
                 </div>
                 <div class="work-meta">Spring 2024 • <a href="#" target="_blank">HHIVE Website</a></div>
                 <div class="work-description">Analysis of current antimicrobial resistance initiatives and collaborative solutions.</div>
@@ -246,31 +246,31 @@
             <h2>Poetry</h2>
             <div class="poetry-item">
                 <div class="work-title">
-                    <a href="#" onclick="showFullText('poem1')">"The Story of Tea"</a>
+                    <a href="poem1.html">"The Story of Tea"</a>
                 </div>
                 <div class="work-meta">Summer 2024 • <a href="#" target="_blank">Poetry Potion</a></div>
             </div>
             <div class="poetry-item">
                 <div class="work-title">
-                    <a href="#" onclick="showFullText('poem2')">"Top-Down Processing"</a>
+                    <a href="poem2.html">"Top-Down Processing"</a>
                 </div>
                 <div class="work-meta">Spring 2024 • <a href="#" target="_blank">UNC's Cellar Door</a></div>
             </div>
             <div class="poetry-item">
                 <div class="work-title">
-                    <a href="#" onclick="showFullText('poem3')">"Blink or You'll Miss it"</a>
+                    <a href="poem3.html">"Blink or You'll Miss it"</a>
                 </div>
                 <div class="work-meta">Spring 2024 • <a href="#" target="_blank">UNC's Monsoon Magazine</a></div>
             </div>
             <div class="poetry-item">
                 <div class="work-title">
-                    <a href="#" onclick="showFullText('poem4')">"Mother's Lullaby"</a>
+                    <a href="poem4.html">"Mother's Lullaby"</a>
                 </div>
                 <div class="work-meta">Spring 2024 • <a href="#" target="_blank">UNC's Monsoon Magazine</a></div>
             </div>
             <div class="poetry-item">
                 <div class="work-title">
-                    <a href="#" onclick="showFullText('poem5')">"Betrayal"</a>
+                    <a href="poem5.html">"Betrayal"</a>
                 </div>
                 <div class="work-meta">Spring 2024 • <a href="#" target="_blank">UNC's Monsoon Magazine</a></div>
             </div>
@@ -308,80 +308,6 @@
             </div>
         </div>
 
-        <!-- Full text sections -->
-        <div id="essay1" class="section hidden">
-            <h2>Essays</h2>
-            <div class="full-text">
-                <h3>"The Importance of Interdisciplinarity: Reflections from Studying Abroad"</h3>
-                <p>Replace this with your full essay text. You can paste the entire essay here...</p>
-                
-                <p>This is where your essay content would go. You can include multiple paragraphs, quotes, and format it however you like.</p>
-                
-                <p>The text will maintain proper spacing and formatting.</p>
-            </div>
-            <a href="#" onclick="showSection('essays')" class="back-link">← Back to Essays</a>
-        </div>
-
-        <div id="essay2" class="section hidden">
-            <h2>Essays</h2>
-            <div class="full-text">
-                <h3>"Antimicrobial Resistance Efforts and How We're Helping"</h3>
-                <p>Replace this with your full essay text...</p>
-            </div>
-            <a href="#" onclick="showSection('essays')" class="back-link">← Back to Essays</a>
-        </div>
-
-        <div id="poem1" class="section hidden">
-            <h2>Poetry</h2>
-            <div class="full-text">
-                <h3>"The Story of Tea"</h3>
-                <p>Replace this with your full poem text...
-
-Line breaks will be preserved
-Like this
-And this
-
-You can format it however you want.</p>
-            </div>
-            <a href="#" onclick="showSection('poetry')" class="back-link">← Back to Poetry</a>
-        </div>
-
-        <div id="poem2" class="section hidden">
-            <h2>Poetry</h2>
-            <div class="full-text">
-                <h3>"Top-Down Processing"</h3>
-                <p>Replace this with your full poem text...</p>
-            </div>
-            <a href="#" onclick="showSection('poetry')" class="back-link">← Back to Poetry</a>
-        </div>
-
-        <div id="poem3" class="section hidden">
-            <h2>Poetry</h2>
-            <div class="full-text">
-                <h3>"Blink or You'll Miss it"</h3>
-                <p>Replace this with your full poem text...</p>
-            </div>
-            <a href="#" onclick="showSection('poetry')" class="back-link">← Back to Poetry</a>
-        </div>
-
-        <div id="poem4" class="section hidden">
-            <h2>Poetry</h2>
-            <div class="full-text">
-                <h3>"Mother's Lullaby"</h3>
-                <p>Replace this with your full poem text...</p>
-            </div>
-            <a href="#" onclick="showSection('poetry')" class="back-link">← Back to Poetry</a>
-        </div>
-
-        <div id="poem5" class="section hidden">
-            <h2>Poetry</h2>
-            <div class="full-text">
-                <h3>"Betrayal"</h3>
-                <p>Replace this with your full poem text...</p>
-            </div>
-            <a href="#" onclick="showSection('poetry')" class="back-link">← Back to Poetry</a>
-        </div>
-
         <footer>
             <p>© 2025 Your Name. All rights reserved.</p>
         </footer>
@@ -397,17 +323,6 @@ You can format it however you want.</p>
             
             // Show selected section
             document.getElementById(sectionId).classList.remove('hidden');
-        }
-        
-        function showFullText(textId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.add('hidden');
-            });
-            
-            // Show selected full text
-            document.getElementById(textId).classList.remove('hidden');
         }
         
         // Show essays by default
