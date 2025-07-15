@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Writing Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #f8f8f8;
+            color: #1a1a1a;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            border-bottom: 3px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.1em;
+            color: #666;
+            font-style: italic;
+        }
+
+        nav {
+            margin: 30px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        nav a:hover {
+            border-bottom-color: #000;
+        }
+
+        .work-title a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px dotted #666;
+        }
+
+        .work-title a:hover {
+            border-bottom-color: #000;
+        }
+
+        .work-meta a {
+            color: #666;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .work-meta a:hover {
+            color: #000;
+            border-bottom-color: #000;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-left: 4px solid #000;
+            padding-left: 15px;
+        }
+
+        .work-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #fff;
+            border-left: 2px solid #ddd;
+            transition: border-color 0.3s ease;
+        }
+
+        .work-item:hover {
+            border-left-color: #000;
+        }
+
+        .work-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .work-meta {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .work-description {
+            color: #333;
+        }
+
+        .poetry-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #fff;
+            border-left: 2px solid #000;
+        }
+
+        .conference-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+
+        .conference-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .conference-venue {
+            color: #666;
+            font-style: italic;
+        }
+
+        footer {
+            border-top: 1px solid #ddd;
+            padding-top: 30px;
+            margin-top: 60px;
+            text-align: center;
+            color: #666;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .full-text {
+            background-color: #fff;
+            padding: 30px;
+            margin: 20px 0;
+            border: 2px solid #000;
+            white-space: pre-wrap;
+            line-height: 1.8;
+        }
+
+        .full-text h3 {
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #666;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .back-link:hover {
+            color: #000;
+            border-bottom-color: #000;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .container {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your Name</h1>
+            <p class="tagline">Writer, Researcher, Poet</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('essays')">Essays</a></li>
+                <li><a href="#" onclick="showSection('poetry')">Poetry</a></li>
+                <li><a href="#" onclick="showSection('research')">Research</a></li>
+                <li><a href="#" onclick="showSection('about')">About</a></li>
+            </ul>
+        </nav>
+
+        <div id="essays" class="section">
+            <h2>Essays</h2>
+            <div class="work-item">
+                <div class="work-title">
+                    <a href="#" onclick="showFullText('essay1')">"The Importance of Interdisciplinarity: Reflections from Studying Abroad"</a>
+                </div>
+                <div class="work-meta">Fall 2024 • <a href="#" target="_blank">HHIVE Website</a></div>
+                <div class="work-description">An exploration of interdisciplinary learning through the lens of international academic experience.</div>
+            </div>
+            <div class="work-item">
+                <div class="work-title">
+                    <a href="#" onclick="showFullText('essay2')">"Antimicrobial Resistance Efforts and How We're Helping"</a>
+                </div>
+                <div class="work-meta">Spring 2024 • <a href="#" target="_blank">HHIVE Website</a></div>
+                <div class="work-description">Analysis of current antimicrobial resistance initiatives and collaborative solutions.</div>
+            </div>
+        </div>
+
+        <div id="poetry" class="section hidden">
+            <h2>Poetry</h2>
+            <div class="poetry-item">
+                <div class="work-title">
+                    <a href="#" onclick="showFullText('poem1')">"The Story of Tea"</a>
+                </div>
+                <div class="work-meta">Summer 2024 • <a href="#" target="_blank">Poetry Potion</a></div>
+            </div>
+            <div class="poetry-item">
+                <div class="work-title">
+                    <a href="#" onclick="showFullText('poem2')">"Top-Down Processing"</a>
+                </div>
+                <div class="work-meta">Spring 2024 • <a href="#" target="_blank">UNC's Cellar Door</a></div>
+            </div>
+            <div class="poetry-item">
+                <div class="work-title">
+                    <a href="#" onclick="showFullText('poem3')">"Blink or You'll Miss it"</a>
+                </div>
+                <div class="work-meta">Spring 2024 • <a href="#" target="_blank">UNC's Monsoon Magazine</a></div>
+            </div>
+            <div class="poetry-item">
+                <div class="work-title">
+                    <a href="#" onclick="showFullText('poem4')">"Mother's Lullaby"</a>
+                </div>
+                <div class="work-meta">Spring 2024 • <a href="#" target="_blank">UNC's Monsoon Magazine</a></div>
+            </div>
+            <div class="poetry-item">
+                <div class="work-title">
+                    <a href="#" onclick="showFullText('poem5')">"Betrayal"</a>
+                </div>
+                <div class="work-meta">Spring 2024 • <a href="#" target="_blank">UNC's Monsoon Magazine</a></div>
+            </div>
+        </div>
+
+        <div id="research" class="section hidden">
+            <h2>Research & Conferences</h2>
+            <div class="conference-item">
+                <div class="conference-title">"Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy"</div>
+                <div class="conference-venue">GillingsX at UNC School of Global Public Health • April 2nd 2025</div>
+            </div>
+            <div class="conference-item">
+                <div class="conference-title">"Stories of Superbugs: Narratives of Antimicrobial Resistance at the London Science Museum"</div>
+                <div class="conference-venue">Triangle Undergraduate Literary Conference (TULC) at Duke • February 22nd 2025</div>
+            </div>
+            <div class="conference-item">
+                <div class="conference-title">"Stories of Superbugs" Poster</div>
+                <div class="conference-venue">UNC Celebration of Undergraduate Research • Spring 2025</div>
+            </div>
+            <div class="conference-item">
+                <div class="conference-title">SURF Project Poster</div>
+                <div class="conference-venue">UNC Celebration of Undergraduate Research • Spring 2026</div>
+            </div>
+            <div class="conference-item">
+                <div class="conference-title">Honors Thesis Poster</div>
+                <div class="conference-venue">UNC Celebration of Undergraduate Research • Spring 2026</div>
+            </div>
+        </div>
+
+        <div id="about" class="section hidden">
+            <h2>About</h2>
+            <div class="work-item">
+                <p>I am a writer and researcher interested in the intersection of literature, science, and public health. My work explores themes of interdisciplinarity, antimicrobial resistance, and the power of narrative in scientific communication.</p>
+                <p style="margin-top: 15px;">Currently studying at UNC Chapel Hill, I have been published in various literary magazines and have presented research at academic conferences.</p>
+            </div>
+        </div>
+
+        <!-- Full text sections -->
+        <div id="essay1" class="section hidden">
+            <h2>Essays</h2>
+            <div class="full-text">
+                <h3>"The Importance of Interdisciplinarity: Reflections from Studying Abroad"</h3>
+                <p>Replace this with your full essay text. You can paste the entire essay here...</p>
+                
+                <p>This is where your essay content would go. You can include multiple paragraphs, quotes, and format it however you like.</p>
+                
+                <p>The text will maintain proper spacing and formatting.</p>
+            </div>
+            <a href="#" onclick="showSection('essays')" class="back-link">← Back to Essays</a>
+        </div>
+
+        <div id="essay2" class="section hidden">
+            <h2>Essays</h2>
+            <div class="full-text">
+                <h3>"Antimicrobial Resistance Efforts and How We're Helping"</h3>
+                <p>Replace this with your full essay text...</p>
+            </div>
+            <a href="#" onclick="showSection('essays')" class="back-link">← Back to Essays</a>
+        </div>
+
+        <div id="poem1" class="section hidden">
+            <h2>Poetry</h2>
+            <div class="full-text">
+                <h3>"The Story of Tea"</h3>
+                <p>Replace this with your full poem text...
+
+Line breaks will be preserved
+Like this
+And this
+
+You can format it however you want.</p>
+            </div>
+            <a href="#" onclick="showSection('poetry')" class="back-link">← Back to Poetry</a>
+        </div>
+
+        <div id="poem2" class="section hidden">
+            <h2>Poetry</h2>
+            <div class="full-text">
+                <h3>"Top-Down Processing"</h3>
+                <p>Replace this with your full poem text...</p>
+            </div>
+            <a href="#" onclick="showSection('poetry')" class="back-link">← Back to Poetry</a>
+        </div>
+
+        <div id="poem3" class="section hidden">
+            <h2>Poetry</h2>
+            <div class="full-text">
+                <h3>"Blink or You'll Miss it"</h3>
+                <p>Replace this with your full poem text...</p>
+            </div>
+            <a href="#" onclick="showSection('poetry')" class="back-link">← Back to Poetry</a>
+        </div>
+
+        <div id="poem4" class="section hidden">
+            <h2>Poetry</h2>
+            <div class="full-text">
+                <h3>"Mother's Lullaby"</h3>
+                <p>Replace this with your full poem text...</p>
+            </div>
+            <a href="#" onclick="showSection('poetry')" class="back-link">← Back to Poetry</a>
+        </div>
+
+        <div id="poem5" class="section hidden">
+            <h2>Poetry</h2>
+            <div class="full-text">
+                <h3>"Betrayal"</h3>
+                <p>Replace this with your full poem text...</p>
+            </div>
+            <a href="#" onclick="showSection('poetry')" class="back-link">← Back to Poetry</a>
+        </div>
+
+        <footer>
+            <p>© 2025 Your Name. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+        
+        function showFullText(textId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected full text
+            document.getElementById(textId).classList.remove('hidden');
+        }
+        
+        // Show essays by default
+        showSection('essays');
+    </script>
+</body>
+</html>
