@@ -312,31 +312,31 @@
 
         <div id="poetry" class="section hidden">
             <h2>Poetry</h2>
-            <div class="poetry-item" data-themes="personal">
+            <div class="work-item" data-themes="personal">
                 <div class="work-title">
                     <a href="poem1.html">"The Story of Tea"</a>
                 </div>
                 <div class="work-meta">Summer 2024 • <a href="#" target="_blank">Poetry Potion</a></div>
             </div>
-            <div class="poetry-item" data-themes="science academic">
+            <div class="work-item" data-themes="science academic">
                 <div class="work-title">
                     <a href="poem2.html">"Top-Down Processing"</a>
                 </div>
                 <div class="work-meta">Spring 2024 • <a href="#" target="_blank">UNC's Cellar Door</a></div>
             </div>
-            <div class="poetry-item" data-themes="personal">
+            <div class="work-item" data-themes="personal">
                 <div class="work-title">
                     <a href="poem3.html">"Blink or You'll Miss it"</a>
                 </div>
                 <div class="work-meta">Spring 2024 • <a href="#" target="_blank">UNC's Monsoon Magazine</a></div>
             </div>
-            <div class="poetry-item" data-themes="personal">
+            <div class="work-item" data-themes="personal">
                 <div class="work-title">
                     <a href="poem4.html">"Mother's Lullaby"</a>
                 </div>
                 <div class="work-meta">Spring 2024 • <a href="#" target="_blank">UNC's Monsoon Magazine</a></div>
             </div>
-            <div class="poetry-item" data-themes="personal">
+            <div class="work-item" data-themes="personal">
                 <div class="work-title">
                     <a href="poem5.html">"Betrayal"</a>
                 </div>
@@ -346,25 +346,35 @@
 
         <div id="research" class="section hidden">
             <h2>Research & Conferences</h2>
-            <div class="conference-item" data-themes="health science academic">
-                <div class="conference-title">"Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy"</div>
-                <div class="conference-venue">GillingsX at UNC School of Global Public Health • April 2nd 2025</div>
+            <div class="work-item" data-themes="health science academic">
+                <div class="work-title">
+                    <a href="research1.html">"Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy"</a>
+                </div>
+                <div class="work-meta">GillingsX at UNC School of Global Public Health • April 2nd 2025</div>
             </div>
-            <div class="conference-item" data-themes="health science academic">
-                <div class="conference-title">"Stories of Superbugs: Narratives of Antimicrobial Resistance at the London Science Museum"</div>
-                <div class="conference-venue">Triangle Undergraduate Literary Conference (TULC) at Duke • February 22nd 2025</div>
+            <div class="work-item" data-themes="health science academic">
+                <div class="work-title">
+                    <a href="https://example.com/superbugs-presentation" target="_blank">"Stories of Superbugs: Narratives of Antimicrobial Resistance at the London Science Museum"</a>
+                </div>
+                <div class="work-meta">Triangle Undergraduate Literary Conference (TULC) at Duke • February 22nd 2025</div>
             </div>
-            <div class="conference-item" data-themes="health science academic">
-                <div class="conference-title">"Stories of Superbugs" Poster</div>
-                <div class="conference-venue">UNC Celebration of Undergraduate Research • Spring 2025</div>
+            <div class="work-item" data-themes="health science academic">
+                <div class="work-title">
+                    <a href="https://example.com/superbugs-poster" target="_blank">"Stories of Superbugs" Poster</a>
+                </div>
+                <div class="work-meta">UNC Celebration of Undergraduate Research • Spring 2025</div>
             </div>
-            <div class="conference-item" data-themes="academic">
-                <div class="conference-title">SURF Project Poster</div>
-                <div class="conference-venue">UNC Celebration of Undergraduate Research • Spring 2026</div>
+            <div class="work-item" data-themes="academic">
+                <div class="work-title">
+                    <a href="research4.html">SURF Project Poster</a>
+                </div>
+                <div class="work-meta">UNC Celebration of Undergraduate Research • Spring 2026</div>
             </div>
-            <div class="conference-item" data-themes="academic">
-                <div class="conference-title">Honors Thesis Poster</div>
-                <div class="conference-venue">UNC Celebration of Undergraduate Research • Spring 2026</div>
+            <div class="work-item" data-themes="academic">
+                <div class="work-title">
+                    <a href="research5.html">Honors Thesis Poster</a>
+                </div>
+                <div class="work-meta">UNC Celebration of Undergraduate Research • Spring 2026</div>
             </div>
         </div>
 
@@ -419,7 +429,7 @@
             
             // Get all items in current section
             const currentSectionElement = document.getElementById(currentSection);
-            const items = currentSectionElement.querySelectorAll('.work-item, .poetry-item, .conference-item');
+            const items = currentSectionElement.querySelectorAll('.work-item');
             
             items.forEach(item => {
                 if (filterType === 'all') {
