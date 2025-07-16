@@ -285,80 +285,100 @@
         <div class="filter-container">
             <span class="filter-toggle" onclick="toggleFilter()">filter</span>
             <div id="filterMenu" class="filter-menu hidden">
-                <div class="filter-option active" onclick="applyFilter('all')">All</div>
-                <div class="filter-option" onclick="applyFilter('health')">Health</div>
-                <div class="filter-option" onclick="applyFilter('academic')">Academic Essays</div>
-                <div class="filter-option" onclick="applyFilter('personal')">Personal</div>
-                <div class="filter-option" onclick="applyFilter('science')">Science</div>
+                <div class="filter-option active" onclick="applyFilter('all', this)">All</div>
+                <div class="filter-option" onclick="applyFilter('health', this)">Health</div>
+                <div class="filter-option" onclick="applyFilter('academic', this)">Academic Essays</div>
+                <div class="filter-option" onclick="applyFilter('personal', this)">Personal</div>
+                <div class="filter-option" onclick="applyFilter('science', this)">Science</div>
             </div>
         </div>
 
         <div id="essays" class="section">
             <h2>Essays</h2>
+            
+            <!-- ESSAY ENTRY 1 START -->
             <div class="work-item" data-themes="health science">
                 <div class="work-title">
                     <a href="https://hhive.unc.edu/2024/12/why-interdisciplinarity-matters-reflections-on-studying-abroad-in-london/" target="_blank">"Why Interdisciplinarity Matters: Reflections on Studying Abroad in London"</a>
                 </div>
-                <div class="work-meta">Fall 2024 • <a href="#" target="_blank">HHIVE Website</a></div>
+                <div class="work-meta">Fall 2024 • <a href="https://hhive.unc.edu/" target="_blank">HHIVE Website</a></div>
                 <div class="work-description">An exploration of interdisciplinary learning through the lens of international academic experience.</div>
             </div>
+            <!-- ESSAY ENTRY 1 END -->
+            
+            <!-- ESSAY ENTRY 2 START -->
             <div class="work-item" data-themes="health science academic">
                 <div class="work-title">
-                    <a href="https://hhive.unc.edu/2024/04/antimicrobial-resistance-efforts-how-were-helping/">"Antimicrobial Resistance Efforts and How We're Helping"</a>
+                    <a href="https://hhive.unc.edu/2024/04/antimicrobial-resistance-efforts-how-were-helping/" target="_blank">"Antimicrobial Resistance Efforts and How We're Helping"</a>
                 </div>
-                <div class="work-meta">Spring 2024 • <a href="#" target="_blank">HHIVE Website</a></div>
+                <div class="work-meta">Spring 2024 • <a href="https://hhive.unc.edu/" target="_blank">HHIVE Website</a></div>
                 <div class="work-description">Analysis of current antimicrobial resistance initiatives and collaborative solutions.</div>
             </div>
+            <!-- ESSAY ENTRY 2 END -->
+            
         </div>
 
         <div id="poetry" class="section hidden">
             <h2>Poetry</h2>
+            
+            <!-- POETRY ENTRY 1 START -->
             <div class="work-item" data-themes="personal">
                 <div class="work-title">
-                    <a href="https://www.poetrypotion.com/the-story-of-tea-by-sophia-vona/">"The Story of Tea"</a>
+                    <a href="https://www.poetrypotion.com/the-story-of-tea-by-sophia-vona/" target="_blank">"The Story of Tea"</a>
                 </div>
-                <div class="work-meta">Summer 2024 • <a href="#" target="_blank">Poetry Potion</a></div>
+                <div class="work-meta">Summer 2024 • <a href="https://www.poetrypotion.com/" target="_blank">Poetry Potion</a></div>
             </div>
+            <!-- POETRY ENTRY 1 END -->
+            
+            <!-- POETRY ENTRY 2 START -->
             <div class="work-item" data-themes="science">
-                <div class="work-title">
-                    <a href="poem2.html">"Top-Down Processing"</a>
-                </div>
-                <div class="work-meta">Spring 2024 • <a href="#" target="_blank">UNC's Cellar Door</a></div>
+                <div class="work-title">"Top-Down Processing"</div>
+                <div class="work-meta">Spring 2024 • UNC's Cellar Door</div>
             </div>
+            <!-- POETRY ENTRY 2 END -->
+            
+            <!-- POETRY ENTRY 3 START -->
             <div class="work-item" data-themes="personal">
-                <div class="work-title">
-                    <a href="poem3.html">"Blink or You'll Miss it"</a>
-                </div>
-                <div class="work-meta">Spring 2024 • <a href="#" target="_blank">UNC's Monsoon Magazine</a></div>
+                <div class="work-title">"Blink or You'll Miss it"</div>
+                <div class="work-meta">Spring 2024 • UNC's Monsoon Magazine</div>
             </div>
+            <!-- POETRY ENTRY 3 END -->
+            
+            <!-- POETRY ENTRY 4 START -->
             <div class="work-item" data-themes="personal">
-                <div class="work-title">
-                    <a href="poem4.html">"Mother's Lullaby"</a>
-                </div>
-                <div class="work-meta">Spring 2024 • <a href="#" target="_blank">UNC's Monsoon Magazine</a></div>
+                <div class="work-title">"Mother's Lullaby"</div>
+                <div class="work-meta">Spring 2024 • UNC's Monsoon Magazine</div>
             </div>
+            <!-- POETRY ENTRY 4 END -->
+            
+            <!-- POETRY ENTRY 5 START -->
             <div class="work-item" data-themes="personal">
-                <div class="work-title">
-                    <a href="poem5.html">"Betrayal"</a>
-                </div>
-                <div class="work-meta">Spring 2024 • <a href="#" target="_blank">UNC's Monsoon Magazine</a></div>
+                <div class="work-title">"Betrayal"</div>
+                <div class="work-meta">Spring 2024 • UNC's Monsoon Magazine</div>
             </div>
+            <!-- POETRY ENTRY 5 END -->
+            
         </div>
 
         <div id="research" class="section hidden">
             <h2>Research & Conferences</h2>
+            
+            <!-- RESEARCH ENTRY 1 START -->
             <div class="work-item" data-themes="health science academic">
-                <div class="work-title">
-                    <a href="plcy565.html">"Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy"</a>
-                </div>
+                <div class="work-title">"Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy"</div>
                 <div class="work-meta">Derivative Slides Presented at GillingsX at UNC School of Global Public Health • April 2nd 2025</div>
             </div>
+            <!-- RESEARCH ENTRY 1 END -->
+            
+            <!-- RESEARCH ENTRY 2 START -->
             <div class="work-item" data-themes="health science academic">
                 <div class="work-title">
                     <a href="https://our.unc.edu/abstract/vona-the-story-of-superbugs-historical-narratives-of-penicillin-antimicrobial-resistance-at-the-london-science-museum/" target="_blank">"The Story of Superbugs: Historical Narratives of Penicillin & Antimicrobial Resistance at the London Science Museum"</a>
                 </div>
                 <div class="work-meta">Triangle Undergraduate Literary Conference (TULC) at Duke • February 22nd 2025</div>
             </div>
+            <!-- RESEARCH ENTRY 2 END -->
+            
         </div>
 
         <div id="about" class="section hidden">
@@ -390,7 +410,7 @@
             currentSection = sectionId;
             
             // Apply current filter to the new section
-            applyFilter(currentFilter);
+            applyFilter(currentFilter, document.querySelector('.filter-option.active'));
         }
 
         function toggleFilter() {
@@ -398,12 +418,15 @@
             filterMenu.classList.toggle('hidden');
         }
 
-        function applyFilter(filterType) {
+        function applyFilter(filterType, element) {
             // Update active filter option
             document.querySelectorAll('.filter-option').forEach(option => {
                 option.classList.remove('active');
             });
-            event.target.classList.add('active');
+            
+            if (element) {
+                element.classList.add('active');
+            }
             
             currentFilter = filterType;
             
