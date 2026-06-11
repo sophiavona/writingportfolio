@@ -1,466 +1,558 @@
-e<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sophia - Writing Portfolio</title>
+    <title>Sophia Vona – Writing Portfolio</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --sage: #6b8f71;
+            --sage-light: #e8f0e9;
+            --sage-mid: #a8c4ab;
+            --cream: #faf8f4;
+            --ink: #1e1e1e;
+            --ink-mid: #4a4a4a;
+            --ink-light: #8a8a8a;
+            --warm-white: #ffffff;
+            --border: #ddd8d0;
+            --accent-warm: #c9956a;
         }
 
         body {
             font-family: 'Courier New', monospace;
-            background-color: #f8f8f8;
-            color: #1a1a1a;
-            line-height: 1.6;
-            font-size: 16px;
+            background-color: var(--cream);
+            color: var(--ink);
+            line-height: 1.7;
+            font-size: 15px;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
+        /* ── HEADER ── */
         header {
-            border-bottom: 3px solid #000;
-            padding-bottom: 20px;
-            margin-bottom: 40px;
+            background-color: var(--warm-white);
+            border-bottom: 1px solid var(--border);
+            padding: 40px 0 0;
         }
+
+        .header-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: flex-start;
+            gap: 32px;
+            margin-bottom: 28px;
+        }
+
+        .profile-photo {
+            flex-shrink: 0;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--sage-mid);
+        }
+
+        .header-text { flex: 1; }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2.1em;
             font-weight: bold;
-            letter-spacing: -1px;
-            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+            color: var(--ink);
+            margin-bottom: 6px;
         }
 
         .tagline {
-            font-size: 1.1em;
-            color: #666;
+            font-size: 0.9em;
+            color: var(--ink-mid);
             font-style: italic;
+            max-width: 480px;
+            line-height: 1.5;
         }
 
+        /* ── NAV ── */
         nav {
-            margin: 30px 0;
+            border-top: 1px solid var(--border);
+            padding: 0;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
+            gap: 0;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 16px;
         }
 
         nav a {
-            color: #000;
+            display: block;
+            padding: 13px 16px;
+            color: var(--ink-mid);
             text-decoration: none;
+            font-size: 0.85em;
             font-weight: bold;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s ease;
+            letter-spacing: 0.05em;
+            border-bottom: 3px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
         }
 
-        nav a:hover {
-            border-bottom-color: #000;
+        nav a:hover { color: var(--ink); }
+        nav a.active { color: var(--sage); border-bottom-color: var(--sage); }
+
+        /* ── MAIN ── */
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
         }
 
-        .filter-container {
-            margin-bottom: 20px;
-            position: relative;
+        /* ── FILTER ── */
+        .filter-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
         }
 
-        .filter-toggle {
-            color: #666;
-            text-decoration: none;
-            border-bottom: 1px solid #ccc;
+        .filter-label {
+            font-size: 0.8em;
+            color: var(--ink-light);
+            margin-right: 4px;
+        }
+
+        .filter-chip {
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: var(--warm-white);
+            color: var(--ink-mid);
+            font-size: 0.78em;
+            font-family: 'Courier New', monospace;
             cursor: pointer;
-            font-size: 0.9em;
-            display: inline-block;
-            padding: 5px 0;
+            transition: all 0.15s;
         }
 
-        .filter-toggle:hover {
-            color: #000;
-            border-bottom-color: #000;
-        }
+        .filter-chip:hover { border-color: var(--sage-mid); color: var(--ink); }
+        .filter-chip.active { background: var(--sage); border-color: var(--sage); color: #fff; }
 
-        .filter-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-            min-width: 200px;
-            margin-top: 5px;
-        }
-
-        .filter-menu.hidden {
-            display: none;
-        }
-
-        .filter-option {
-            padding: 10px 15px;
-            cursor: pointer;
-            border-bottom: 1px solid #f0f0f0;
-            transition: background-color 0.2s ease;
-        }
-
-        .filter-option:hover {
-            background-color: #f8f8f8;
-        }
-
-        .filter-option:last-child {
-            border-bottom: none;
-        }
-
-        .filter-option.active {
-            background-color: #000;
-            color: #fff;
-        }
-
-        .work-title a {
-            color: #000;
-            text-decoration: none;
-            border-bottom: 1px dotted #666;
-        }
-
-        .work-title a:hover {
-            border-bottom-color: #000;
-        }
-
-        .work-meta a {
-            color: #666;
-            text-decoration: none;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .work-meta a:hover {
-            color: #000;
-            border-bottom-color: #000;
-        }
-
-        .section {
-            margin-bottom: 50px;
-        }
+        /* ── SECTION ── */
+        .section { display: none; }
+        .section.active { display: block; }
 
         .section h2 {
-            font-size: 1.8em;
+            font-size: 1em;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-light);
             margin-bottom: 20px;
-            border-left: 4px solid #000;
-            padding-left: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
         }
 
+        /* ── WORK ITEMS ── */
         .work-item {
-            margin-bottom: 25px;
-            padding: 20px;
-            background-color: #fff;
-            border-left: 2px solid #ddd;
-            transition: border-color 0.3s ease;
+            background: var(--warm-white);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 18px 20px;
+            margin-bottom: 12px;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
 
         .work-item:hover {
-            border-left-color: #000;
+            border-color: var(--sage-mid);
+            box-shadow: 0 2px 8px rgba(107,143,113,0.08);
         }
 
         .work-title {
             font-weight: bold;
-            font-size: 1.1em;
-            margin-bottom: 5px;
+            font-size: 0.97em;
+            margin-bottom: 4px;
+            color: var(--ink);
         }
+
+        .work-title a {
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .work-title a:hover { color: var(--sage); border-bottom-color: var(--sage); }
 
         .work-meta {
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 8px;
+            font-size: 0.8em;
+            color: var(--ink-light);
+            margin-bottom: 6px;
         }
+
+        .work-meta a { color: var(--ink-light); text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
+        .work-meta a:hover { color: var(--sage); border-bottom-color: var(--sage-mid); }
 
         .work-description {
-            color: #333;
+            font-size: 0.88em;
+            color: var(--ink-mid);
+            line-height: 1.5;
         }
 
-        .poetry-item {
-            margin-bottom: 15px;
-            padding: 15px;
-            background-color: #fff;
-            border-left: 2px solid #000;
+        /* ── TAGS ── */
+        .tag-row { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+
+        .tag {
+            font-size: 0.72em;
+            padding: 2px 8px;
+            border-radius: 3px;
+            background: var(--sage-light);
+            color: var(--sage);
+            font-family: 'Courier New', monospace;
         }
 
-        .conference-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-        }
-
-        .conference-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .conference-venue {
-            color: #666;
-            font-style: italic;
-        }
-
-        footer {
-            border-top: 1px solid #ddd;
-            padding-top: 30px;
-            margin-top: 60px;
-            text-align: center;
-            color: #666;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .full-text {
-            background-color: #fff;
-            padding: 30px;
-            margin: 20px 0;
-            border: 2px solid #000;
-            white-space: pre-wrap;
-            line-height: 1.8;
-        }
-
-        .full-text h3 {
-            margin-bottom: 20px;
-            font-size: 1.3em;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        .back-link {
+        /* ── READ BUTTON ── */
+        .read-btn {
             display: inline-block;
-            margin-top: 20px;
-            color: #666;
+            margin-top: 10px;
+            padding: 5px 14px;
+            font-size: 0.78em;
+            font-family: 'Courier New', monospace;
+            border: 1px solid var(--sage-mid);
+            border-radius: 4px;
+            color: var(--sage);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.15s;
             text-decoration: none;
-            border-bottom: 1px solid #ccc;
         }
 
-        .back-link:hover {
-            color: #000;
-            border-bottom-color: #000;
+        .read-btn:hover { background: var(--sage); color: white; border-color: var(--sage); }
+
+        /* ── MODAL ── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(30,30,30,0.55);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .container {
-                padding: 20px 15px;
-            }
+        .modal-overlay.open { display: flex; }
+
+        .modal {
+            background: var(--warm-white);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 800px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .modal-title { font-weight: bold; font-size: 0.9em; color: var(--ink); max-width: 600px; }
+
+        .modal-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.4em;
+            color: var(--ink-light);
+            line-height: 1;
+            padding: 0 4px;
+            transition: color 0.15s;
+        }
+
+        .modal-close:hover { color: var(--ink); }
+
+        .modal-body {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 60vh;
+            border: none;
+        }
+
+        .modal-hint {
+            padding: 12px 20px;
+            background: var(--sage-light);
+            font-size: 0.78em;
+            color: var(--sage);
+            border-top: 1px solid var(--sage-mid);
+            flex-shrink: 0;
+        }
+
+        /* ── ABOUT ── */
+        .about-card {
+            background: var(--warm-white);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 28px 24px;
+        }
+
+        .about-card p { margin-bottom: 14px; color: var(--ink-mid); font-size: 0.93em; }
+        .about-card p:last-child { margin-bottom: 0; }
+
+        /* ── FOOTER ── */
+        footer {
+            text-align: center;
+            color: var(--ink-light);
+            font-size: 0.8em;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            .header-top { flex-direction: column; align-items: center; text-align: center; }
+            .tagline { text-align: center; }
+            h1 { font-size: 1.7em; }
+            nav a { padding: 11px 10px; font-size: 0.78em; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Sophia Vona- Writing Portfolio</h1>
-            <p class="tagline">Here are some things I've written.
-                Slowly populating this with my work, please bear with the construction of this site!</p>
-        </header>
 
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+        <div class="header-top">
+            <img src="sophia.jpg" alt="Sophia Vona" class="profile-photo" />
+            <div class="header-text">
+                <h1>Sophia Vona</h1>
+                <p class="tagline">Writer and researcher at the intersection of literature, science, and public health. Slowly adding work here — thanks for your patience.</p>
+            </div>
+        </div>
         <nav>
             <ul>
-                <li><a href="#" onclick="showSection('essays')">Essays</a></li>
-                <li><a href="#" onclick="showSection('poetry')">Poetry</a></li>
-                <li><a href="#" onclick="showSection('research')">Research</a></li>
-                <li><a href="#" onclick="showSection('about')">About</a></li>
+                <li><a href="#" class="active" id="nav-essays" onclick="showSection('essays', this)">Essays</a></li>
+                <li><a href="#" id="nav-poetry" onclick="showSection('poetry', this)">Poetry</a></li>
+                <li><a href="#" id="nav-research" onclick="showSection('research', this)">Research</a></li>
+                <li><a href="#" id="nav-about" onclick="showSection('about', this)">About</a></li>
             </ul>
         </nav>
+    </div>
+</header>
 
-        <div class="filter-container">
-            <span class="filter-toggle" onclick="toggleFilter()">filter</span>
-            <div id="filterMenu" class="filter-menu hidden">
-                <div class="filter-option active" onclick="applyFilter('all', this)">All</div>
-                <div class="filter-option" onclick="applyFilter('health', this)">Health</div>
-                <div class="filter-option" onclick="applyFilter('academic', this)">Academic Essays</div>
-                <div class="filter-option" onclick="applyFilter('personal', this)">Personal</div>
-                <div class="filter-option" onclick="applyFilter('science', this)">Science</div>
-            </div>
-        </div>
+<!-- MAIN -->
+<div class="container">
 
-        <div id="essays" class="section">
-            <h2>Essays</h2>
-            
-            <!-- ESSAY ENTRY 1 START -->
-            <div class="work-item" data-themes="health science">
-                <div class="work-title">
-                    <a href="https://hhive.unc.edu/2024/12/why-interdisciplinarity-matters-reflections-on-studying-abroad-in-london/" target="_blank">"Why Interdisciplinarity Matters: Reflections on Studying Abroad in London"</a>
-                </div>
-                <div class="work-meta">Fall 2024 • <a href="https://hhive.unc.edu/" target="_blank">HHIVE Website</a></div>
-                <div class="work-description">An exploration of interdisciplinary learning through the lens of international academic experience.</div>
-            </div>
-            <!-- ESSAY ENTRY 1 END -->
-            
-            <!-- ESSAY ENTRY 2 START -->
-            <div class="work-item" data-themes="health science academic">
-                <div class="work-title">
-                    <a href="https://hhive.unc.edu/2024/04/antimicrobial-resistance-efforts-how-were-helping/" target="_blank">"Antimicrobial Resistance Efforts and How We're Helping"</a>
-                </div>
-                <div class="work-meta">Spring 2024 • <a href="https://hhive.unc.edu/" target="_blank">HHIVE Website</a></div>
-                <div class="work-description">Analysis of current antimicrobial resistance initiatives and collaborative solutions.</div>
-            </div>
-            <!-- ESSAY ENTRY 2 END -->
-            
-        </div>
-
-        <div id="poetry" class="section hidden">
-            <h2>Poetry</h2>
-            
-            <!-- POETRY ENTRY 1 START -->
-            <div class="work-item" data-themes="personal">
-                <div class="work-title">
-                    <a href="https://www.poetrypotion.com/the-story-of-tea-by-sophia-vona/" target="_blank">"The Story of Tea"</a>
-                </div>
-                <div class="work-meta">Summer 2024 • <a href="https://www.poetrypotion.com/" target="_blank">Poetry Potion</a></div>
-            </div>
-            <!-- POETRY ENTRY 1 END -->
-            
-            <!-- POETRY ENTRY 2 START -->
-            <div class="work-item" data-themes="science">
-                <div class="work-title">"Top-Down Processing"</div>
-                <div class="work-meta">Spring 2024 • UNC's Cellar Door</div>
-            </div>
-            <!-- POETRY ENTRY 2 END -->
-            
-            <!-- POETRY ENTRY 3 START -->
-            <div class="work-item" data-themes="personal">
-                <div class="work-title">"Blink or You'll Miss it"</div>
-                <div class="work-meta">Spring 2024 • UNC's Monsoon Magazine</div>
-            </div>
-            <!-- POETRY ENTRY 3 END -->
-            
-            <!-- POETRY ENTRY 4 START -->
-            <div class="work-item" data-themes="personal">
-                <div class="work-title">"Mother's Lullaby"</div>
-                <div class="work-meta">Spring 2024 • UNC's Monsoon Magazine</div>
-            </div>
-            <!-- POETRY ENTRY 4 END -->
-            
-            <!-- POETRY ENTRY 5 START -->
-            <div class="work-item" data-themes="personal">
-                <div class="work-title">"Betrayal"</div>
-                <div class="work-meta">Spring 2024 • UNC's Monsoon Magazine</div>
-            </div>
-            <!-- POETRY ENTRY 5 END -->
-            
-        </div>
-
-        <div id="research" class="section hidden">
-            <h2>Research & Conferences</h2>
-            
-            <!-- RESEARCH ENTRY 1 START -->
-            <div class="work-item" data-themes="health science academic">
-                <div class="work-title">"Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy"</div>
-                <div class="work-meta">Derivative Slides Presented at GillingsX at UNC School of Global Public Health • April 2nd 2025</div>
-            </div>
-            <!-- RESEARCH ENTRY 1 END -->
-            
-            <!-- RESEARCH ENTRY 2 START -->
-            <div class="work-item" data-themes="health science academic">
-                <div class="work-title">
-                    <a href="https://our.unc.edu/abstract/vona-the-story-of-superbugs-historical-narratives-of-penicillin-antimicrobial-resistance-at-the-london-science-museum/" target="_blank">"The Story of Superbugs: Historical Narratives of Penicillin & Antimicrobial Resistance at the London Science Museum"</a>
-                </div>
-                <div class="work-meta">Triangle Undergraduate Literary Conference (TULC) at Duke • February 22nd 2025</div>
-            </div>
-            <!-- RESEARCH ENTRY 2 END -->
-            
-        </div>
-
-        <div id="about" class="section hidden">
-            <h2>About</h2>
-            <div class="work-item">
-                <p>I am a writer and researcher interested in the intersection of literature, science, and public health. My work explores themes of interdisciplinarity, antimicrobial resistance, and the power of narrative in scientific communication.</p>
-                <p style="margin-top: 15px;">Currently studying at UNC Chapel Hill, I have been published in various literary magazines and have presented research at academic conferences.</p>
-            </div>
-        </div>
-
-        <footer>
-            <p>© 2025 Sophia Vona. All rights reserved.</p>
-        </footer>
+    <!-- FILTER -->
+    <div class="filter-bar" id="filterBar">
+        <span class="filter-label">filter:</span>
+        <button class="filter-chip active" onclick="applyFilter('all', this)">all</button>
+        <button class="filter-chip" onclick="applyFilter('health', this)">health</button>
+        <button class="filter-chip" onclick="applyFilter('academic', this)">academic</button>
+        <button class="filter-chip" onclick="applyFilter('personal', this)">personal</button>
+        <button class="filter-chip" onclick="applyFilter('science', this)">science</button>
     </div>
 
-    <script>
-        let currentFilter = 'all';
-        let currentSection = 'essays';
+    <!-- ESSAYS -->
+    <div id="essays" class="section active">
+        <h2>Essays</h2>
 
-        function showSection(sectionId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.add('hidden');
-            });
-            
-            // Show selected section
-            document.getElementById(sectionId).classList.remove('hidden');
-            currentSection = sectionId;
-            
-            // Apply current filter to the new section
-            applyFilter(currentFilter, document.querySelector('.filter-option.active'));
+        <!-- ESSAY 1 -->
+        <div class="work-item" data-themes="health science">
+            <div class="work-title">
+                <a href="https://hhive.unc.edu/2024/12/why-interdisciplinarity-matters-reflections-on-studying-abroad-in-london/" target="_blank">
+                    "Why Interdisciplinarity Matters: Reflections on Studying Abroad in London"
+                </a>
+            </div>
+            <div class="work-meta">Fall 2024 · <a href="https://hhive.unc.edu/" target="_blank">HHIVE</a></div>
+            <div class="work-description">An exploration of interdisciplinary learning through the lens of international academic experience.</div>
+            <div class="tag-row">
+                <span class="tag">health</span>
+                <span class="tag">science</span>
+            </div>
+        </div>
+
+        <!-- ESSAY 2 -->
+        <div class="work-item" data-themes="health science academic">
+            <div class="work-title">
+                <a href="https://hhive.unc.edu/2024/04/antimicrobial-resistance-efforts-how-were-helping/" target="_blank">
+                    "Antimicrobial Resistance Efforts and How We're Helping"
+                </a>
+            </div>
+            <div class="work-meta">Spring 2024 · <a href="https://hhive.unc.edu/" target="_blank">HHIVE</a></div>
+            <div class="work-description">Analysis of current antimicrobial resistance initiatives and collaborative solutions.</div>
+            <div class="tag-row">
+                <span class="tag">health</span>
+                <span class="tag">science</span>
+                <span class="tag">academic</span>
+            </div>
+        </div>
+
+        <!-- TEMPLATE FOR A GOOGLE DOC ESSAY — duplicate and fill in your details -->
+        <!--
+        <div class="work-item" data-themes="THEMES_HERE">
+            <div class="work-title">"Your Essay Title Here"</div>
+            <div class="work-meta">Season Year · Publication</div>
+            <div class="work-description">Brief description of the piece.</div>
+            <div class="tag-row"><span class="tag">tag</span></div>
+            <button class="read-btn" onclick="openDoc('YOUR_GOOGLE_DOC_EMBED_URL', 'Your Essay Title')">read →</button>
+        </div>
+        -->
+
+    </div>
+
+    <!-- POETRY -->
+    <div id="poetry" class="section">
+        <h2>Poetry</h2>
+
+        <div class="work-item" data-themes="personal">
+            <div class="work-title">
+                <a href="https://www.poetrypotion.com/the-story-of-tea-by-sophia-vona/" target="_blank">"The Story of Tea"</a>
+            </div>
+            <div class="work-meta">Summer 2024 · <a href="https://www.poetrypotion.com/" target="_blank">Poetry Potion</a></div>
+            <div class="tag-row"><span class="tag">personal</span></div>
+        </div>
+
+        <div class="work-item" data-themes="science">
+            <div class="work-title">"Top-Down Processing"</div>
+            <div class="work-meta">Spring 2024 · UNC's Cellar Door</div>
+            <div class="tag-row"><span class="tag">science</span></div>
+        </div>
+
+        <div class="work-item" data-themes="personal">
+            <div class="work-title">"Blink or You'll Miss it"</div>
+            <div class="work-meta">Spring 2024 · UNC's Monsoon Magazine</div>
+            <div class="tag-row"><span class="tag">personal</span></div>
+        </div>
+
+        <div class="work-item" data-themes="personal">
+            <div class="work-title">"Mother's Lullaby"</div>
+            <div class="work-meta">Spring 2024 · UNC's Monsoon Magazine</div>
+            <div class="tag-row"><span class="tag">personal</span></div>
+        </div>
+
+        <div class="work-item" data-themes="personal">
+            <div class="work-title">"Betrayal"</div>
+            <div class="work-meta">Spring 2024 · UNC's Monsoon Magazine</div>
+            <div class="tag-row"><span class="tag">personal</span></div>
+        </div>
+    </div>
+
+    <!-- RESEARCH -->
+    <div id="research" class="section">
+        <h2>Research & Conferences</h2>
+
+        <div class="work-item" data-themes="health science academic">
+            <div class="work-title">"Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy"</div>
+            <div class="work-meta">April 2, 2025 · GillingsX at UNC School of Global Public Health</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
+        </div>
+
+        <div class="work-item" data-themes="health science academic">
+            <div class="work-title">
+                <a href="https://our.unc.edu/abstract/vona-the-story-of-superbugs-historical-narratives-of-penicillin-antimicrobial-resistance-at-the-london-science-museum/" target="_blank">
+                    "The Story of Superbugs: Historical Narratives of Penicillin & Antimicrobial Resistance at the London Science Museum"
+                </a>
+            </div>
+            <div class="work-meta">February 22, 2025 · Triangle Undergraduate Literary Conference (TULC) at Duke</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="about" class="section">
+        <h2>About</h2>
+        <div class="about-card">
+            <p>I'm a writer and researcher interested in the intersection of literature, science, and public health. My work explores interdisciplinarity, antimicrobial resistance, and the power of narrative in scientific communication.</p>
+            <p>Currently studying at UNC Chapel Hill, I've been published in various literary magazines and have presented research at academic conferences including GillingsX and the Triangle Undergraduate Literary Conference at Duke.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Sophia Vona</p>
+    </footer>
+</div>
+
+<!-- MODAL for Google Doc embeds -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="modal-title" id="modalTitle"></span>
+            <button class="modal-close" onclick="closeModal()">×</button>
+        </div>
+        <div class="modal-body">
+            <iframe id="modalFrame" src="" allowfullscreen></iframe>
+        </div>
+        <div class="modal-hint">
+            Tip: if the doc doesn't load, make sure it's set to "Anyone with the link can view" in Google Docs sharing settings.
+        </div>
+    </div>
+</div>
+
+<script>
+    // ── NAV ──
+    function showSection(id, link) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+        if (link) link.classList.add('active');
+        currentSection = id;
+        applyFilter(currentFilter, null);
+        return false;
+    }
+
+    // ── FILTER ──
+    let currentFilter = 'all';
+    let currentSection = 'essays';
+
+    function applyFilter(type, btn) {
+        if (btn) {
+            document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
         }
-
-        function toggleFilter() {
-            const filterMenu = document.getElementById('filterMenu');
-            filterMenu.classList.toggle('hidden');
-        }
-
-        function applyFilter(filterType, element) {
-            // Update active filter option
-            document.querySelectorAll('.filter-option').forEach(option => {
-                option.classList.remove('active');
-            });
-            
-            if (element) {
-                element.classList.add('active');
-            }
-            
-            currentFilter = filterType;
-            
-            // Hide filter menu
-            document.getElementById('filterMenu').classList.add('hidden');
-            
-            // Get all items in current section
-            const currentSectionElement = document.getElementById(currentSection);
-            const items = currentSectionElement.querySelectorAll('.work-item');
-            
-            items.forEach(item => {
-                if (filterType === 'all') {
-                    item.style.display = 'block';
-                } else {
-                    const themes = item.getAttribute('data-themes') || '';
-                    if (themes.includes(filterType)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                }
-            });
-        }
-
-        // Close filter menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const filterContainer = document.querySelector('.filter-container');
-            if (!filterContainer.contains(event.target)) {
-                document.getElementById('filterMenu').classList.add('hidden');
-            }
+        currentFilter = type;
+        const section = document.getElementById(currentSection);
+        section.querySelectorAll('.work-item').forEach(item => {
+            if (type === 'all') { item.style.display = ''; return; }
+            const themes = item.getAttribute('data-themes') || '';
+            item.style.display = themes.includes(type) ? '' : 'none';
         });
-        
-        // Show essays by default
-        showSection('essays');
-    </script>
+    }
+
+    // ── GOOGLE DOC MODAL ──
+    function openDoc(embedUrl, title) {
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalFrame').src = embedUrl;
+        document.getElementById('modalOverlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('modalOverlay').classList.remove('open');
+        document.getElementById('modalFrame').src = '';
+        document.body.style.overflow = '';
+    }
+
+    function handleOverlayClick(e) {
+        if (e.target === document.getElementById('modalOverlay')) closeModal();
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
 </body>
 </html>
