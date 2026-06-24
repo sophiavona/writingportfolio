@@ -12,11 +12,11 @@
             --sage-light: #e8f0e9;
             --sage-mid: #a8c4ab;
             --cream: #faf8f4;
-            --ink: #1e1e1e;
-            --ink-mid: #4a4a4a;
-            --ink-light: #8a8a8a;
-            --warm-white: #ffffff;
-            --border: #ddd8d0;
+            --ink: #1e1a14;
+            --ink-mid: #3a3228;
+            --ink-light: #7a7060;
+            --warm-white: #efe8dc;
+            --border: #ddd0be;
             --accent-warm: #c9956a;
         }
 
@@ -25,7 +25,8 @@
             background-color: var(--cream);
             color: var(--ink);
             line-height: 1.7;
-            font-size: 15px;
+            font-size: 17px;
+            font-weight: 500;
         }
 
         /* ── HEADER ── */
@@ -36,9 +37,9 @@
         }
 
         .header-inner {
-            max-width: 860px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 32px;
         }
 
         .header-top {
@@ -54,50 +55,48 @@
             height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid var(--sage-mid);
+            border: 5px solid var(--sage-mid);
         }
 
         .header-text { flex: 1; }
 
         h1 {
-            font-size: 2.1em;
-            font-weight: bold;
+            font-size: 2.2em;
+            font-weight: 900;
             letter-spacing: -0.5px;
             color: var(--ink);
             margin-bottom: 6px;
         }
 
         .tagline {
-            font-size: 0.9em;
+            font-size: 0.95em;
             color: var(--ink-mid);
             font-style: italic;
-            max-width: 480px;
+            font-weight: 500;
+            max-width: 560px;
             line-height: 1.5;
         }
 
         /* ── NAV ── */
-        nav {
-            border-top: 1px solid var(--border);
-            padding: 0;
-        }
+        nav { border-top: 1px solid var(--border); padding: 0; }
 
         nav ul {
             list-style: none;
             display: flex;
             gap: 0;
-            max-width: 860px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 16px;
+            padding: 0 24px;
         }
 
         nav a {
             display: block;
-            padding: 13px 16px;
+            padding: 13px 18px;
             color: var(--ink-mid);
             text-decoration: none;
-            font-size: 0.85em;
-            font-weight: bold;
-            letter-spacing: 0.05em;
+            font-size: 0.9em;
+            font-weight: 800;
+            letter-spacing: 0.06em;
             border-bottom: 3px solid transparent;
             transition: color 0.2s, border-color 0.2s;
         }
@@ -107,9 +106,9 @@
 
         /* ── MAIN ── */
         .container {
-            max-width: 860px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 24px 80px;
+            padding: 40px 32px 80px;
         }
 
         /* ── FILTER ── */
@@ -122,18 +121,20 @@
         }
 
         .filter-label {
-            font-size: 0.8em;
+            font-size: 0.85em;
+            font-weight: 700;
             color: var(--ink-light);
             margin-right: 4px;
         }
 
         .filter-chip {
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 20px;
             border: 1px solid var(--border);
             background: var(--warm-white);
             color: var(--ink-mid);
-            font-size: 0.78em;
+            font-size: 0.82em;
+            font-weight: 700;
             font-family: 'Courier New', monospace;
             cursor: pointer;
             transition: all 0.15s;
@@ -148,7 +149,8 @@
 
         .section h2 {
             font-size: 1em;
-            letter-spacing: 0.12em;
+            font-weight: 800;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
             color: var(--ink-light);
             margin-bottom: 20px;
@@ -161,7 +163,7 @@
             background: var(--warm-white);
             border: 1px solid var(--border);
             border-radius: 6px;
-            padding: 18px 20px;
+            padding: 20px 24px;
             margin-bottom: 12px;
             transition: border-color 0.2s, box-shadow 0.2s;
         }
@@ -172,9 +174,9 @@
         }
 
         .work-title {
-            font-weight: bold;
-            font-size: 0.97em;
-            margin-bottom: 4px;
+            font-weight: 800;
+            font-size: 1.02em;
+            margin-bottom: 5px;
             color: var(--ink);
         }
 
@@ -188,7 +190,8 @@
         .work-title a:hover { color: var(--sage); border-bottom-color: var(--sage); }
 
         .work-meta {
-            font-size: 0.8em;
+            font-size: 0.84em;
+            font-weight: 600;
             color: var(--ink-light);
             margin-bottom: 6px;
         }
@@ -197,40 +200,24 @@
         .work-meta a:hover { color: var(--sage); border-bottom-color: var(--sage-mid); }
 
         .work-description {
-            font-size: 0.88em;
+            font-size: 0.93em;
+            font-weight: 500;
             color: var(--ink-mid);
-            line-height: 1.5;
+            line-height: 1.55;
         }
 
         /* ── TAGS ── */
         .tag-row { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
 
         .tag {
-            font-size: 0.72em;
-            padding: 2px 8px;
+            font-size: 0.75em;
+            font-weight: 700;
+            padding: 2px 9px;
             border-radius: 3px;
             background: var(--sage-light);
             color: var(--sage);
             font-family: 'Courier New', monospace;
         }
-
-        /* ── READ BUTTON ── */
-        .read-btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 5px 14px;
-            font-size: 0.78em;
-            font-family: 'Courier New', monospace;
-            border: 1px solid var(--sage-mid);
-            border-radius: 4px;
-            color: var(--sage);
-            background: transparent;
-            cursor: pointer;
-            transition: all 0.15s;
-            text-decoration: none;
-        }
-
-        .read-btn:hover { background: var(--sage); color: white; border-color: var(--sage); }
 
         /* ── PDF MODAL ── */
         .modal-overlay {
@@ -250,7 +237,7 @@
             background: var(--warm-white);
             border-radius: 8px;
             width: 100%;
-            max-width: 820px;
+            max-width: 900px;
             max-height: 92vh;
             display: flex;
             flex-direction: column;
@@ -258,9 +245,8 @@
             box-shadow: 0 8px 32px rgba(0,0,0,0.18);
         }
 
-        /* title bar */
         .modal-header {
-            padding: 14px 18px;
+            padding: 16px 20px;
             border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
@@ -270,10 +256,10 @@
         }
 
         .modal-title {
-            font-weight: bold;
-            font-size: 0.85em;
+            font-weight: 800;
+            font-size: 0.92em;
             color: var(--ink);
-            max-width: 620px;
+            max-width: 720px;
             line-height: 1.4;
         }
 
@@ -291,9 +277,8 @@
 
         .modal-close:hover { color: var(--ink); }
 
-        /* pdf toolbar */
         .pdf-toolbar {
-            padding: 7px 16px;
+            padding: 8px 18px;
             border-bottom: 1px solid var(--border);
             background: #f5f5f2;
             display: flex;
@@ -303,36 +288,30 @@
             gap: 12px;
         }
 
-        .pdf-toolbar-group {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        .pdf-toolbar-group { display: flex; align-items: center; gap: 8px; }
 
         .toolbar-btn {
             background: none;
             border: 1px solid var(--border);
             border-radius: 4px;
-            padding: 3px 9px;
-            font-size: 0.75em;
+            padding: 4px 11px;
+            font-size: 0.8em;
+            font-weight: 700;
             font-family: 'Courier New', monospace;
             color: var(--ink-mid);
             cursor: pointer;
             transition: all 0.15s;
         }
 
-        .toolbar-btn:hover {
-            border-color: var(--sage-mid);
-            color: var(--ink);
-        }
+        .toolbar-btn:hover { border-color: var(--sage-mid); color: var(--ink); }
 
         .toolbar-label {
-            font-size: 0.75em;
+            font-size: 0.8em;
+            font-weight: 700;
             color: var(--ink-light);
             white-space: nowrap;
         }
 
-        /* pdf frame */
         .modal-body {
             flex: 1;
             overflow: hidden;
@@ -343,14 +322,13 @@
         .modal-body iframe {
             width: 100%;
             height: 100%;
-            min-height: 62vh;
+            min-height: 65vh;
             border: none;
             display: block;
         }
 
-        /* footer */
         .modal-footer {
-            padding: 9px 18px;
+            padding: 10px 20px;
             border-top: 1px solid var(--border);
             background: var(--warm-white);
             display: flex;
@@ -361,7 +339,8 @@
         }
 
         .modal-meta {
-            font-size: 0.75em;
+            font-size: 0.8em;
+            font-weight: 600;
             color: var(--sage);
         }
 
@@ -369,8 +348,9 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 5px 14px;
-            font-size: 0.75em;
+            padding: 5px 16px;
+            font-size: 0.8em;
+            font-weight: 700;
             font-family: 'Courier New', monospace;
             border: 1px solid var(--sage-mid);
             border-radius: 4px;
@@ -382,7 +362,7 @@
             flex-shrink: 0;
         }
 
-        .download-btn:hover { background: var(--sage); color: white; border-color: var(--sage); }
+        .download-btn:hover { background: var(--sage); color: #fff; border-color: var(--sage); }
 
         /* ── ABOUT ── */
         .about-card {
@@ -392,14 +372,15 @@
             padding: 28px 24px;
         }
 
-        .about-card p { margin-bottom: 14px; color: var(--ink-mid); font-size: 0.93em; }
+        .about-card p { margin-bottom: 14px; color: var(--ink-mid); font-size: 0.95em; font-weight: 500; }
         .about-card p:last-child { margin-bottom: 0; }
 
         /* ── FOOTER ── */
         footer {
             text-align: center;
             color: var(--ink-light);
-            font-size: 0.8em;
+            font-size: 0.82em;
+            font-weight: 600;
             padding-top: 30px;
             border-top: 1px solid var(--border);
         }
@@ -409,14 +390,14 @@
             .header-top { flex-direction: column; align-items: center; text-align: center; }
             .tagline { text-align: center; }
             h1 { font-size: 1.7em; }
-            nav a { padding: 11px 10px; font-size: 0.78em; }
+            nav a { padding: 11px 10px; font-size: 0.82em; }
             .pdf-toolbar { flex-wrap: wrap; gap: 8px; }
+            .header-inner, .container, nav ul { padding-left: 16px; padding-right: 16px; }
         }
     </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
     <div class="header-inner">
         <div class="header-top">
@@ -437,10 +418,8 @@
     </div>
 </header>
 
-<!-- MAIN -->
 <div class="container">
 
-    <!-- FILTER -->
     <div class="filter-bar" id="filterBar">
         <span class="filter-label">filter:</span>
         <button class="filter-chip active" onclick="applyFilter('all', this)">all</button>
@@ -462,10 +441,7 @@
             </div>
             <div class="work-meta">Fall 2024 · <a href="https://hhive.unc.edu/" target="_blank">HHIVE</a></div>
             <div class="work-description">An exploration of interdisciplinary learning through the lens of international academic experience.</div>
-            <div class="tag-row">
-                <span class="tag">health</span>
-                <span class="tag">science</span>
-            </div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">science</span></div>
         </div>
 
         <div class="work-item" data-themes="health science academic">
@@ -476,11 +452,7 @@
             </div>
             <div class="work-meta">Spring 2024 · <a href="https://hhive.unc.edu/" target="_blank">HHIVE</a></div>
             <div class="work-description">Analysis of current antimicrobial resistance initiatives and collaborative solutions.</div>
-            <div class="tag-row">
-                <span class="tag">health</span>
-                <span class="tag">science</span>
-                <span class="tag">academic</span>
-            </div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
         </div>
     </div>
 
@@ -489,9 +461,7 @@
         <h2>Poetry</h2>
 
         <div class="work-item" data-themes="personal">
-            <div class="work-title">
-                <a href="https://www.poetrypotion.com/the-story-of-tea-by-sophia-vona/" target="_blank">"The Story of Tea"</a>
-            </div>
+            <div class="work-title"><a href="https://www.poetrypotion.com/the-story-of-tea-by-sophia-vona/" target="_blank">"The Story of Tea"</a></div>
             <div class="work-meta">Summer 2024 · <a href="https://www.poetrypotion.com/" target="_blank">Poetry Potion</a></div>
             <div class="tag-row"><span class="tag">personal</span></div>
         </div>
@@ -527,10 +497,6 @@
 
         <div class="work-item" data-themes="health science academic">
             <div class="work-title">
-                <!--
-                    Replace "pdfs/new-experts.pdf" with the actual path to your PDF in the repo.
-                    The third argument is the meta label shown in the modal footer.
-                -->
                 <a href="#" onclick="openPdf('pdfs/new-experts.pdf', 'The New Experts: Reproducing and Recasting the Cultural Imaginaries of Biomedical Expertise during COVID-19 on the Joe Rogan Podcast', 'May 2026 · Honors Thesis in English and Comparative Lit'); return false;">
                     "The New Experts: Reproducing and Recasting the Cultural Imaginaries of Biomedical Expertise during COVID-19 on the Joe Rogan Podcast"
                 </a>
@@ -542,7 +508,6 @@
 
         <div class="work-item" data-themes="health science academic">
             <div class="work-title">
-                <!-- Replace "pdfs/health-securitization.pdf" with your actual PDF path -->
                 <a href="#" onclick="openPdf('pdfs/health-securitization.pdf', 'Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy', 'Dec 2024 · PLCY 565: Global Health Law and Policy'); return false;">
                     "Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy"
                 </a>
@@ -571,22 +536,16 @@
         </div>
     </div>
 
-    <footer>
-        <p>© 2025 Sophia Vona</p>
-    </footer>
+    <footer><p>© 2025 Sophia Vona</p></footer>
 </div>
 
 <!-- PDF MODAL -->
 <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
     <div class="modal">
-
-        <!-- title bar -->
         <div class="modal-header">
             <span class="modal-title" id="modalTitle"></span>
             <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
         </div>
-
-        <!-- pdf toolbar -->
         <div class="pdf-toolbar">
             <div class="pdf-toolbar-group">
                 <button class="toolbar-btn" onclick="changePage(-1)">‹ prev</button>
@@ -595,29 +554,21 @@
             </div>
             <div class="pdf-toolbar-group">
                 <button class="toolbar-btn" onclick="changeZoom(-25)">−</button>
-                <span class="toolbar-label" id="zoomLabel">100%</span>
+                <span class="toolbar-label" id="zoomLabel">125%</span>
                 <button class="toolbar-btn" onclick="changeZoom(25)">+</button>
             </div>
         </div>
-
-        <!-- pdf iframe -->
         <div class="modal-body">
             <iframe id="modalFrame" src="" title="Document viewer"></iframe>
         </div>
-
-        <!-- footer with download -->
         <div class="modal-footer">
             <span class="modal-meta" id="modalMeta"></span>
-            <a id="downloadBtn" href="#" download class="download-btn">
-                ↓ download pdf
-            </a>
+            <a id="downloadBtn" href="#" download class="download-btn">↓ download pdf</a>
         </div>
-
     </div>
 </div>
 
 <script>
-    /* ── NAV ── */
     function showSection(id, link) {
         document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
         document.getElementById(id).classList.add('active');
@@ -627,7 +578,6 @@
         applyFilter(currentFilter, null);
     }
 
-    /* ── FILTER ── */
     let currentFilter = 'all';
     let currentSection = 'essays';
 
@@ -645,23 +595,19 @@
         });
     }
 
-    /* ── PDF MODAL ── */
     let currentPdfPath = '';
     let currentPage = 1;
-    let currentZoom = 100;
+    let currentZoom = 125;
 
     function openPdf(pdfPath, title, meta) {
         currentPdfPath = pdfPath;
         currentPage = 1;
-        currentZoom = 100;
-
+        currentZoom = 125;
         document.getElementById('modalTitle').textContent = '\u201C' + title + '\u201D';
         document.getElementById('modalMeta').textContent = meta || '';
         document.getElementById('downloadBtn').href = pdfPath;
         document.getElementById('downloadBtn').setAttribute('download', title + '.pdf');
-
         updateFrame();
-
         document.getElementById('modalOverlay').classList.add('open');
         document.body.style.overflow = 'hidden';
     }
