@@ -29,7 +29,6 @@
             font-weight: 500;
         }
 
-        /* ── HEADER ── */
         header {
             background-color: var(--warm-white);
             border-bottom: 1px solid var(--border);
@@ -77,7 +76,6 @@
             line-height: 1.5;
         }
 
-        /* ── NAV ── */
         nav {
             border-top: 1px solid var(--border);
             padding: 0;
@@ -108,14 +106,12 @@
         nav a:hover { color: var(--ink); }
         nav a.active { color: var(--sage); border-bottom-color: var(--sage); }
 
-        /* ── MAIN ── */
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 40px 32px 80px;
         }
 
-        /* ── FILTER ── */
         .filter-bar {
             display: flex;
             align-items: center;
@@ -147,7 +143,6 @@
         .filter-chip:hover { border-color: var(--sage-mid); color: var(--ink); }
         .filter-chip.active { background: var(--sage); border-color: var(--sage); color: #fff; }
 
-        /* ── SECTION ── */
         .section { display: none; }
         .section.active { display: block; }
 
@@ -162,7 +157,6 @@
             border-bottom: 1px solid var(--border);
         }
 
-        /* ── WORK ITEMS ── */
         .work-item {
             background: var(--warm-white);
             border: 1px solid var(--border);
@@ -210,7 +204,6 @@
             line-height: 1.55;
         }
 
-        /* ── TAGS ── */
         .tag-row { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
 
         .tag {
@@ -223,7 +216,6 @@
             font-family: 'Courier New', monospace;
         }
 
-        /* ── PDF MODAL ── */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -365,7 +357,6 @@
 
         .download-btn:hover { background: var(--sage); color: #fff; border-color: var(--sage); }
 
-        /* ── ABOUT ── */
         .about-card {
             background: var(--warm-white);
             border: 1px solid var(--border);
@@ -376,7 +367,6 @@
         .about-card p { margin-bottom: 14px; color: var(--ink-mid); font-size: 0.95em; font-weight: 500; }
         .about-card p:last-child { margin-bottom: 0; }
 
-        /* ── FOOTER ── */
         footer {
             text-align: center;
             color: var(--ink-light);
@@ -386,7 +376,6 @@
             border-top: 1px solid var(--border);
         }
 
-        /* ── RESPONSIVE ── */
         @media (max-width: 600px) {
             h1 { font-size: 1.8em; }
             .profile-photo { width: 150px; height: 150px; }
@@ -455,6 +444,27 @@
             <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
         </div>
 
+        <div class="work-item" data-themes="health academic">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/engl-266-final.pdf', 'Illness, Death, Annihilation and Virginia Woolf', 'ENGL 266 · Literary Analysis'); return false;">
+                    "Illness, Death, Annihilation and Virginia Woolf"
+                </a>
+            </div>
+            <div class="work-meta">ENGL 266 · Literary Analysis</div>
+            <div class="work-description">An examination of how Woolf uses illness as a lens for rediscovery of self and world in <em>Mrs. Dalloway</em> and "On Being Ill," in dialogue with Becker, Freud, and Kleinman on mortality and annihilation.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
+        </div>
+
+        <div class="work-item" data-themes="health academic">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/body-undone-close-reading.pdf', 'Complex Embodiments in A Body Undone', 'Close Reading · Health Humanities'); return false;">
+                    "Complex Embodiments in <em>A Body Undone</em>"
+                </a>
+            </div>
+            <div class="work-meta">Close Reading · Health Humanities</div>
+            <div class="work-description">A close reading of Christina Crosby's memoir through the dualities of figurative vs. biomedical pain language, and externality vs. internality in constructing embodied knowledge after paralysis.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
+        </div>
 
         <div class="work-item" data-themes="health academic">
             <div class="work-title">
@@ -503,18 +513,40 @@
         <div class="work-item" data-themes="academic">
             <div class="work-title">
                 <a href="#" onclick="openPdf('pdfs/fire-water.pdf', 'Fire or Water? Negating Religious Arguments through Elemental Opposites in Richard II', 'Literary Analysis Essay'); return false;">
-                    "Fire or Water? Negating Religious Arguments through Elemental Opposites in Richard II"
+                    "Fire or Water? Negating Religious Arguments through Elemental Opposites in <em>Richard II</em>"
                 </a>
             </div>
             <div class="work-meta">Literary Analysis Essay</div>
-            <div class="work-description">A close reading of Shakespeare's fire and water imagery in Richard II to challenge divine right and the question of rebellion.</div>
+            <div class="work-description">A close reading of Shakespeare's fire and water imagery in <em>Richard II</em> to challenge divine right and the question of rebellion.</div>
             <div class="tag-row"><span class="tag">academic</span></div>
         </div>
     </div>
 
-    <!-- POETRY -->
+    <!-- POETRY & CREATIVE WORKS -->
     <div id="poetry" class="section">
         <h2>Poetry &amp; Creative Works</h2>
+
+        <div class="work-item" data-themes="health personal academic">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/much-ado.pdf', 'Much Ado About Postpartum Depression', 'Creative Writing · Epistolary'); return false;">
+                    "Much Ado About Postpartum Depression"
+                </a>
+            </div>
+            <div class="work-meta">Creative Writing · Epistolary</div>
+            <div class="work-description">An epistolary exploration of postpartum depression from the perspective of Hero from Shakespeare's <em>Much Ado About Nothing</em>, reimagined as a new mother in Renaissance Italy.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">personal</span><span class="tag">academic</span></div>
+        </div>
+
+        <div class="work-item" data-themes="health personal">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/love-covid-story.pdf', 'Love in the Time of COVID', 'Short Fiction'); return false;">
+                    "Love in the Time of COVID"
+                </a>
+            </div>
+            <div class="work-meta">Short Fiction</div>
+            <div class="work-description">A coming-of-age queer love story between two teen girls navigating first love, mental illness, and identity during the height of COVID — told through park benches, Instagram DMs, and the distance between them.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">personal</span></div>
+        </div>
 
         <div class="work-item" data-themes="personal">
             <div class="work-title"><a href="https://www.poetrypotion.com/the-story-of-tea-by-sophia-vona/" target="_blank">"The Story of Tea"</a></div>
@@ -548,7 +580,7 @@
 
         <div class="work-item" data-themes="health personal">
             <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/Cancer-Scare.pdf', 'Dad's Cancer Scare', 'Poetry'); return false;">
+                <a href="#" onclick="openPdf('pdfs/Cancer-Scare.pdf', 'Dad\'s Cancer Scare', 'Poetry'); return false;">
                     "Dad's Cancer Scare"
                 </a>
             </div>
@@ -569,7 +601,7 @@
 
     <!-- RESEARCH -->
     <div id="research" class="section">
-        <h2>Research & Conferences</h2>
+        <h2>Research &amp; Conferences</h2>
 
         <div class="work-item" data-themes="health science academic">
             <div class="work-title">
@@ -595,8 +627,30 @@
 
         <div class="work-item" data-themes="health science academic">
             <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/biol-480-final.pdf', 'Planning for the Next Pandemic', 'BIOL 480 · Final Paper'); return false;">
+                    "Planning for the Next Pandemic"
+                </a>
+            </div>
+            <div class="work-meta">BIOL 480 · Final Paper</div>
+            <div class="work-description">A policy-oriented analysis of pandemic preparedness drawing on COVID-19, smallpox, and cholera, with recommendations on medical mistrust, infrastructure, and global cooperation.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
+        </div>
+
+        <div class="work-item" data-themes="health science academic">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/science-religion-conference-speech.pdf', 'Intermingling Science and Religion in Writings from the Scientific Revolution', 'Conference Presentation · History of Science'); return false;">
+                    "Intermingling Science and Religion in Writings from the Scientific Revolution"
+                </a>
+            </div>
+            <div class="work-meta">Conference Presentation · History of Science</div>
+            <div class="work-description">A slide-based conference talk examining how Galileo, Boyle, and Aldrovandi wove together empirical and theological reasoning, complicating the narrative of linear progress away from religion in science.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
+        </div>
+
+        <div class="work-item" data-themes="health science academic">
+            <div class="work-title">
                 <a href="https://our.unc.edu/abstract/vona-the-story-of-superbugs-historical-narratives-of-penicillin-antimicrobial-resistance-at-the-london-science-museum/" target="_blank">
-                    "The Story of Superbugs: Historical Narratives of Penicillin & Antimicrobial Resistance at the London Science Museum"
+                    "The Story of Superbugs: Historical Narratives of Penicillin &amp; Antimicrobial Resistance at the London Science Museum"
                 </a>
             </div>
             <div class="work-meta">February 22, 2025 · Triangle Undergraduate Literary Conference (TULC) at Duke</div>
