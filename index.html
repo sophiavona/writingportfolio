@@ -12,11 +12,11 @@
             --sage-light: #e8f0e9;
             --sage-mid: #a8c4ab;
             --cream: #faf8f4;
-            --ink: #1e1a14;
+            --ink: #1e1e1e;
             --ink-mid: #3a3228;
             --ink-light: #7a7060;
-            --warm-white: #efe8dc;
-            --border: #ddd0be;
+            --warm-white: #ffffff;
+            --border: #ddd8d0;
             --accent-warm: #c9956a;
         }
 
@@ -33,7 +33,8 @@
         header {
             background-color: var(--warm-white);
             border-bottom: 1px solid var(--border);
-            padding: 40px 0 0;
+            padding: 48px 0 0;
+            text-align: center;
         }
 
         .header-inner {
@@ -44,24 +45,22 @@
 
         .header-top {
             display: flex;
-            align-items: flex-start;
-            gap: 32px;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
             margin-bottom: 28px;
         }
 
         .profile-photo {
-            flex-shrink: 0;
-            width: 160px;
-            height: 160px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid var(--sage-mid);
         }
 
-        .header-text { flex: 1; }
-
         h1 {
-            font-size: 2.2em;
+            font-size: 2.4em;
             font-weight: 900;
             letter-spacing: -0.5px;
             color: var(--ink);
@@ -73,16 +72,21 @@
             color: var(--ink-mid);
             font-style: italic;
             font-weight: 500;
-            max-width: 560px;
+            max-width: 480px;
+            margin: 0 auto;
             line-height: 1.5;
         }
 
         /* ── NAV ── */
-        nav { border-top: 1px solid var(--border); padding: 0; }
+        nav {
+            border-top: 1px solid var(--border);
+            padding: 0;
+        }
 
         nav ul {
             list-style: none;
             display: flex;
+            justify-content: center;
             gap: 0;
             max-width: 1100px;
             margin: 0 auto;
@@ -91,7 +95,7 @@
 
         nav a {
             display: block;
-            padding: 13px 18px;
+            padding: 13px 22px;
             color: var(--ink-mid);
             text-decoration: none;
             font-size: 0.9em;
@@ -252,7 +256,6 @@
             justify-content: space-between;
             align-items: center;
             flex-shrink: 0;
-            background: var(--warm-white);
         }
 
         .modal-title {
@@ -315,7 +318,6 @@
         .modal-body {
             flex: 1;
             overflow: hidden;
-            position: relative;
             background: #e8e8e4;
         }
 
@@ -330,7 +332,6 @@
         .modal-footer {
             padding: 10px 20px;
             border-top: 1px solid var(--border);
-            background: var(--warm-white);
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -387,10 +388,9 @@
 
         /* ── RESPONSIVE ── */
         @media (max-width: 600px) {
-            .header-top { flex-direction: column; align-items: center; text-align: center; }
-            .tagline { text-align: center; }
-            h1 { font-size: 1.7em; }
-            nav a { padding: 11px 10px; font-size: 0.82em; }
+            h1 { font-size: 1.8em; }
+            .profile-photo { width: 150px; height: 150px; }
+            nav a { padding: 11px 12px; font-size: 0.82em; }
             .pdf-toolbar { flex-wrap: wrap; gap: 8px; }
             .header-inner, .container, nav ul { padding-left: 16px; padding-right: 16px; }
         }
@@ -402,7 +402,7 @@
     <div class="header-inner">
         <div class="header-top">
             <img src="2026headshot.jpg" alt="Sophia Vona" class="profile-photo" />
-            <div class="header-text">
+            <div>
                 <h1>Sophia Vona</h1>
                 <p class="tagline">UNC undergrad who majored in English and Biology, with extensive writing and research interests in health humanities.</p>
             </div>
@@ -420,7 +420,7 @@
 
 <div class="container">
 
-    <div class="filter-bar" id="filterBar">
+    <div class="filter-bar">
         <span class="filter-label">filter:</span>
         <button class="filter-chip active" onclick="applyFilter('all', this)">all</button>
         <button class="filter-chip" onclick="applyFilter('health', this)">health</button>
