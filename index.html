@@ -53,8 +53,8 @@
         }
 
         .profile-photo {
-            width: 110px;
-            height: 110px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--terracotta);
@@ -63,7 +63,7 @@
 
         .header-text h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.6em;
+            font-size: 3.2em;
             font-weight: 600;
             color: var(--ink);
             letter-spacing: -0.5px;
@@ -78,15 +78,27 @@
             line-height: 1.5;
         }
 
+        .tagline strong {
+            font-weight: 600;
+            font-style: normal;
+            color: var(--ink-mid);
+        }
+
         /* ── NAV ── */
         nav { border-top: 1px solid var(--border); }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
 
         nav ul {
             list-style: none;
             display: flex;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 40px;
         }
 
         nav a {
@@ -105,38 +117,28 @@
         nav a:hover { color: var(--ink); }
         nav a.active { color: var(--ink); border-top-color: var(--terracotta); }
 
-        /* ── CONTAINER ── */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 36px 40px 80px;
-        }
-
-        /* ── FILTER ── */
-        .filter-bar {
+        .nav-filter {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 28px;
-            flex-wrap: wrap;
+            gap: 6px;
         }
 
         .filter-label {
-            font-size: 0.78em;
+            font-size: 0.72em;
             font-weight: 600;
             color: var(--ink-light);
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-right: 4px;
+            margin-right: 2px;
         }
 
         .filter-chip {
-            padding: 5px 14px;
+            padding: 4px 11px;
             border-radius: 20px;
             border: 1px solid var(--border);
             background: transparent;
             color: var(--ink-mid);
-            font-size: 0.78em;
+            font-size: 0.72em;
             font-weight: 600;
             font-family: 'Inter', sans-serif;
             cursor: pointer;
@@ -146,8 +148,13 @@
 
         .filter-chip:hover { border-color: var(--terracotta); color: var(--ink); }
         .filter-chip.active { background: var(--terracotta); border-color: var(--terracotta); color: #fff; }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 36px 40px 80px;
+        }
 
-        /* ── SECTION ── */
+        /* ── CONTAINER ── */
         .section { display: none; }
         .section.active { display: block; }
 
@@ -168,6 +175,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 14px;
+            align-items: stretch;
         }
 
         .work-item {
@@ -398,12 +406,14 @@
 
         /* ── RESPONSIVE ── */
         @media (max-width: 640px) {
-            .header-inner, .container, nav ul { padding-left: 20px; padding-right: 20px; }
+            .header-inner, .container, .nav-inner { padding-left: 20px; padding-right: 20px; }
             .header-top { gap: 16px; }
-            .profile-photo { width: 80px; height: 80px; }
-            .header-text h1 { font-size: 2em; }
+            .profile-photo { width: 90px; height: 90px; }
+            .header-text h1 { font-size: 2.2em; }
             nav a { padding: 10px 12px; font-size: 0.75em; }
             .card-grid { grid-template-columns: 1fr; }
+            .nav-inner { flex-wrap: wrap; gap: 8px; padding-bottom: 8px; }
+            .nav-filter { padding-bottom: 4px; }
         }
     </style>
 </head>
@@ -415,31 +425,32 @@
             <img src="2026headshot.jpg" alt="Sophia Vona" class="profile-photo" />
             <div class="header-text">
                 <h1>Sophia Vona</h1>
-                <p class="tagline">Incoming Cambridge · UNC Honors Alumna<br>Premed with extensive writing and research on Health Humanities</p>
+                <p class="tagline"><strong>Cambridge University · UNC Chapel Hill Honors Alumna</strong><br>Premed with extensive writing and research on Health Humanities</p>
             </div>
         </div>
         <nav>
-            <ul>
-                <li><a href="#" class="active" id="nav-essays" onclick="showSection('essays', this); return false;">Essays</a></li>
-                <li><a href="#" id="nav-poetry" onclick="showSection('poetry', this); return false;">Poetry &amp; Creative Works</a></li>
-                <li><a href="#" id="nav-research" onclick="showSection('research', this); return false;">Research</a></li>
-            </ul>
+            <div class="nav-inner">
+                <ul>
+                    <li><a href="#" class="active" id="nav-research" onclick="showSection('research', this); return false;">Research</a></li>
+                    <li><a href="#" id="nav-essays" onclick="showSection('essays', this); return false;">Essays</a></li>
+                    <li><a href="#" id="nav-poetry" onclick="showSection('poetry', this); return false;">Poetry &amp; Creative Works</a></li>
+                </ul>
+                <div class="nav-filter">
+                    <span class="filter-label">filter:</span>
+                    <button class="filter-chip active" onclick="applyFilter('all', this)">all</button>
+                    <button class="filter-chip" onclick="applyFilter('health-science', this)">health &amp; science</button>
+                    <button class="filter-chip" onclick="applyFilter('academic', this)">academic</button>
+                    <button class="filter-chip" onclick="applyFilter('personal', this)">personal</button>
+                </div>
+            </div>
         </nav>
     </div>
 </header>
 
 <div class="container">
 
-    <div class="filter-bar">
-        <span class="filter-label">filter:</span>
-        <button class="filter-chip active" onclick="applyFilter('all', this)">all</button>
-        <button class="filter-chip" onclick="applyFilter('health-science', this)">health &amp; science</button>
-        <button class="filter-chip" onclick="applyFilter('academic', this)">academic</button>
-        <button class="filter-chip" onclick="applyFilter('personal', this)">personal</button>
-    </div>
-
-    <!-- ESSAYS -->
-    <div id="essays" class="section active">
+    <!-- RESEARCH -->
+    <div id="essays" class="section">
         <div class="section-heading">Essays</div>
         <div class="card-grid">
 
@@ -639,7 +650,7 @@
     </div>
 
     <!-- RESEARCH -->
-    <div id="research" class="section">
+    <div id="research" class="section active">
         <div class="section-heading">Research &amp; Conferences</div>
         <div class="card-grid">
 
@@ -721,7 +732,7 @@
     }
 
     let currentFilter = 'all';
-    let currentSection = 'essays';
+    let currentSection = 'research';
 
     function applyFilter(type, btn) {
         if (btn) {
