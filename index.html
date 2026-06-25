@@ -401,7 +401,6 @@
                 <li><a href="#" class="active" id="nav-essays" onclick="showSection('essays', this); return false;">Essays</a></li>
                 <li><a href="#" id="nav-poetry" onclick="showSection('poetry', this); return false;">Poetry &amp; Creative Works</a></li>
                 <li><a href="#" id="nav-research" onclick="showSection('research', this); return false;">Research</a></li>
-                <li><a href="#" id="nav-about" onclick="showSection('about', this); return false;">About</a></li>
             </ul>
         </nav>
     </div>
@@ -412,16 +411,63 @@
     <div class="filter-bar">
         <span class="filter-label">filter:</span>
         <button class="filter-chip active" onclick="applyFilter('all', this)">all</button>
-        <button class="filter-chip" onclick="applyFilter('health', this)">health</button>
+        <button class="filter-chip" onclick="applyFilter('health-science', this)">health &amp; science</button>
         <button class="filter-chip" onclick="applyFilter('academic', this)">academic</button>
         <button class="filter-chip" onclick="applyFilter('personal', this)">personal</button>
-        <button class="filter-chip" onclick="applyFilter('science', this)">science</button>
     </div>
 
-    <!-- ESSAYS -->
+    <!-- ESSAYS: newest → oldest -->
     <div id="essays" class="section active">
         <h2>Essays</h2>
 
+        <!-- Spring 2026 -->
+        <div class="work-item" data-themes="health academic">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/close-reading.pdf', 'Complex Embodiments in A Body Undone', 'Spring 2026 · ENGL 695: Research Seminar in Disability Studies'); return false;">
+                    "Complex Embodiments in <em>A Body Undone</em>"
+                </a>
+            </div>
+            <div class="work-meta">Spring 2026 · ENGL 695: Research Seminar in Disability Studies</div>
+            <div class="work-description">A close reading of Christina Crosby's memoir through the dualities of figurative vs. biomedical pain language and externality vs. internality in constructing embodied knowledge after paralysis.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
+        </div>
+
+        <div class="work-item" data-themes="health academic">
+            <div class="work-title">
+                <a href="https://new.express.adobe.com/webpage/3OqLFynHrlv6f" target="_blank">
+                    "Defining Disability"
+                </a>
+            </div>
+            <div class="work-meta">Spring 2026 · ENGL 695: Research Seminar in Disability Studies</div>
+            <div class="work-description">A historical exploration of how subjective definitions of disability have shifted over time, what these definitions reveal about how we understand the body, and how they impact access — or a lack of access — to resources for individuals with disabilities.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
+        </div>
+
+        <div class="work-item" data-themes="health academic">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/sensory-ethnography.pdf', 'A Sensory Ethnography of the HHIVE Lab', 'Spring 2026 · ENGL 695: Research Seminar in Disability Studies'); return false;">
+                    "A Sensory Ethnography of the HHIVE Lab"
+                </a>
+            </div>
+            <div class="work-meta">Spring 2026 · ENGL 695: Research Seminar in Disability Studies</div>
+            <div class="work-description">A sensory ethnography of the HHIVE Lab across three visits, arguing that sound functions as the primary medium through which atmosphere and emplacement are constituted in the space.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
+        </div>
+
+        <div class="work-item" data-themes="health science academic">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/science-religion-conference-speech.pdf', 'Intermingling Science and Religion in Writings from the Scientific Revolution', 'Spring 2026 · ENGL 116: History of Writing'); return false;">
+                    "Intermingling Science and Religion in Writings from the Scientific Revolution"
+                </a>
+            </div>
+            <div class="work-meta">Spring 2026 · ENGL 116: History of Writing</div>
+            <div class="work-description">A conference talk examining how Galileo, Boyle, and Aldrovandi wove together empirical and theological reasoning, complicating the narrative of linear progress away from religion in science.</div>
+            <div class="tag-row"><span class="tag">science</span><span class="tag">academic</span></div>
+        </div>
+
+        <!-- Fall 2025 — in poetry section -->
+
+        <!-- Fall 2024 -->
         <div class="work-item" data-themes="health science">
             <div class="work-title">
                 <a href="https://hhive.unc.edu/2024/12/why-interdisciplinarity-matters-reflections-on-studying-abroad-in-london/" target="_blank">
@@ -433,6 +479,30 @@
             <div class="tag-row"><span class="tag">health</span><span class="tag">science</span></div>
         </div>
 
+        <!-- Summer 2024 -->
+        <div class="work-item" data-themes="health academic">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/Engl-266-final.pdf', 'Illness, Death, Annihilation and Virginia Woolf', 'Summer 2024 · ENGL 266H: Science and Literature in London'); return false;">
+                    "Illness, Death, Annihilation and Virginia Woolf"
+                </a>
+            </div>
+            <div class="work-meta">Summer 2024 · ENGL 266H: Science and Literature in London</div>
+            <div class="work-description">An examination of how Woolf uses illness as a lens for rediscovery of self and world in <em>Mrs. Dalloway</em> and "On Being Ill," in dialogue with Becker, Freud, and Kleinman on mortality and annihilation. Completed on the Burch Field Research Seminar in Infectious Disease in London.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
+        </div>
+
+        <div class="work-item" data-themes="health science academic">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/biol-480-final.pdf', 'Planning for the Next Pandemic', 'Summer 2024 · BIOL 480H: Infectious Disease in London'); return false;">
+                    "Planning for the Next Pandemic"
+                </a>
+            </div>
+            <div class="work-meta">Summer 2024 · BIOL 480H: Infectious Disease in London</div>
+            <div class="work-description">A policy-oriented analysis of pandemic preparedness drawing on COVID-19, smallpox, and cholera, with recommendations on medical mistrust, infrastructure, and global cooperation. Completed on the Burch Field Research Seminar in Infectious Disease in London.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
+        </div>
+
+        <!-- Spring 2024 -->
         <div class="work-item" data-themes="health science academic">
             <div class="work-title">
                 <a href="https://hhive.unc.edu/2024/04/antimicrobial-resistance-efforts-how-were-helping/" target="_blank">
@@ -444,165 +514,151 @@
             <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
         </div>
 
-        <div class="work-item" data-themes="health academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/engl-266-final.pdf', 'Illness, Death, Annihilation and Virginia Woolf', 'ENGL 266 · Literary Analysis'); return false;">
-                    "Illness, Death, Annihilation and Virginia Woolf"
-                </a>
-            </div>
-            <div class="work-meta">ENGL 266 · Literary Analysis</div>
-            <div class="work-description">An examination of how Woolf uses illness as a lens for rediscovery of self and world in <em>Mrs. Dalloway</em> and "On Being Ill," in dialogue with Becker, Freud, and Kleinman on mortality and annihilation.</div>
-            <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
-        </div>
-
-        <div class="work-item" data-themes="health academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/body-undone-close-reading.pdf', 'Complex Embodiments in A Body Undone', 'Close Reading · Health Humanities'); return false;">
-                    "Complex Embodiments in <em>A Body Undone</em>"
-                </a>
-            </div>
-            <div class="work-meta">Close Reading · Health Humanities</div>
-            <div class="work-description">A close reading of Christina Crosby's memoir through the dualities of figurative vs. biomedical pain language, and externality vs. internality in constructing embodied knowledge after paralysis.</div>
-            <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
-        </div>
-
-        <div class="work-item" data-themes="health academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/demands_of_duty.pdf', 'The Generous Demands of Duty', 'Pandemics: Ethics, Culture, and Literature · Feb 2023'); return false;">
-                    "The Generous Demands of Duty"
-                </a>
-            </div>
-            <div class="work-meta">Feb 2023 · Pandemics: Ethics, Culture, and Literature</div>
-            <div class="work-description">An argument for a dual duty to individual happiness and collective care, in dialogue with Camus and Tomlinson.</div>
-            <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
-        </div>
-
-        <div class="work-item" data-themes="health academic personal">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/This_is_Not_An_ACL_Story.pdf', '(This is not) An ACL Story', 'Narrative Medicine · Health Humanities'); return false;">
-                    "(This is not) An ACL Story"
-                </a>
-            </div>
-            <div class="work-meta">Narrative Medicine · Health Humanities</div>
-            <div class="work-description">A narrative medicine essay following a friend's ACL injury and the story her medical team missed entirely.</div>
-            <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span><span class="tag">personal</span></div>
-        </div>
-
-        <div class="work-item" data-themes="academic personal">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/democracy-blog.pdf', 'Striving towards Democracy', 'Blog Essay'); return false;">
-                    "Striving towards Democracy"
-                </a>
-            </div>
-            <div class="work-meta">Blog Essay</div>
-            <div class="work-description">A reflection on democracy as a spectrum and guiding ideal rather than an achievable state, and why language matters.</div>
-            <div class="tag-row"><span class="tag">academic</span><span class="tag">personal</span></div>
-        </div>
-
         <div class="work-item" data-themes="health science academic">
             <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/beyond-biology.pdf', 'Beyond Biology: How Stigma Continues to Shape HIV/AIDS Treatment', 'Health Humanities Essay'); return false;">
+                <a href="#" onclick="openPdf('pdfs/beyond-biology.pdf', 'Beyond Biology: How Stigma Continues to Shape HIV/AIDS Treatment', 'Spring 2024 · PUBH 420: HIV/AIDS'); return false;">
                     "Beyond Biology: How Stigma Continues to Shape HIV/AIDS Treatment"
                 </a>
             </div>
-            <div class="work-meta">Health Humanities Essay</div>
+            <div class="work-meta">Spring 2024 · PUBH 420: HIV/AIDS</div>
             <div class="work-description">How social stigma surrounding HIV/AIDS has eclipsed biological solutions and continues to drive the epidemic.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
         </div>
 
         <div class="work-item" data-themes="academic">
             <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/fire-water.pdf', 'Fire or Water? Negating Religious Arguments through Elemental Opposites in Richard II', 'Literary Analysis Essay'); return false;">
+                <a href="#" onclick="openPdf('pdfs/fire-water.pdf', 'Fire or Water? Negating Religious Arguments through Elemental Opposites in Richard II', 'Spring 2024 · ENGL 225H: Shakespeare'); return false;">
                     "Fire or Water? Negating Religious Arguments through Elemental Opposites in <em>Richard II</em>"
                 </a>
             </div>
-            <div class="work-meta">Literary Analysis Essay</div>
+            <div class="work-meta">Spring 2024 · ENGL 225H: Shakespeare</div>
             <div class="work-description">A close reading of Shakespeare's fire and water imagery in <em>Richard II</em> to challenge divine right and the question of rebellion.</div>
             <div class="tag-row"><span class="tag">academic</span></div>
         </div>
+
+        <!-- Fall 2023 -->
+        <div class="work-item" data-themes="health academic personal">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/This_is_Not_An_ACL_Story.pdf', '(This is not) An ACL Story', 'Fall 2023 · ENGL 268H: Medicine, Literature and Culture'); return false;">
+                    "(This is not) An ACL Story"
+                </a>
+            </div>
+            <div class="work-meta">Fall 2023 · ENGL 268H: Medicine, Literature and Culture</div>
+            <div class="work-description">A narrative medicine essay following a friend's ACL injury and the story her medical team missed entirely.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span><span class="tag">personal</span></div>
+        </div>
+
+        <!-- Spring 2023 -->
+        <div class="work-item" data-themes="health academic">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/demands_of_duty.pdf', 'The Generous Demands of Duty', 'Spring 2023 · IDST 124: Pandemics: Ethics, Culture, and Literature'); return false;">
+                    "The Generous Demands of Duty"
+                </a>
+            </div>
+            <div class="work-meta">Spring 2023 · IDST 124: Pandemics: Ethics, Culture, and Literature</div>
+            <div class="work-description">An argument for a dual duty to individual happiness and collective care, in dialogue with Camus and Tomlinson.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
+        </div>
+
+        <div class="work-item" data-themes="academic personal">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/Blog-post.pdf', 'Striving towards Democracy', 'Spring 2023 · Blog Essay'); return false;">
+                    "Striving towards Democracy"
+                </a>
+            </div>
+            <div class="work-meta">Spring 2023 · Blog Essay</div>
+            <div class="work-description">A reflection on democracy as a spectrum and guiding ideal rather than an achievable state, and why language matters.</div>
+            <div class="tag-row"><span class="tag">academic</span><span class="tag">personal</span></div>
+        </div>
+
+        <div class="work-item" data-themes="health academic personal">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/Philosophy_BPSS.pdf', 'Fostering a Philosophy of Empowerment', 'Spring 2026 · Buckley Public Service Scholars'); return false;">
+                    "Fostering a Philosophy of Empowerment"
+                </a>
+            </div>
+            <div class="work-meta">Spring 2026 · Buckley Public Service Scholars</div>
+            <div class="work-description">My personal reflection on what the Buckley Public Service Scholars program has taught me about my own commitment to serving others.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span><span class="tag">personal</span></div>
+        </div>
     </div>
 
-    <!-- POETRY & CREATIVE WORKS -->
+    <!-- POETRY & CREATIVE WORKS: newest → oldest -->
     <div id="poetry" class="section">
         <h2>Poetry &amp; Creative Works</h2>
 
-        <div class="work-item" data-themes="health personal academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/much-ado.pdf', 'Much Ado About Postpartum Depression', 'Creative Writing · Epistolary'); return false;">
-                    "Much Ado About Postpartum Depression"
-                </a>
-            </div>
-            <div class="work-meta">Creative Writing · Epistolary</div>
-            <div class="work-description">An epistolary exploration of postpartum depression from the perspective of Hero from Shakespeare's <em>Much Ado About Nothing</em>, reimagined as a new mother in Renaissance Italy.</div>
-            <div class="tag-row"><span class="tag">health</span><span class="tag">personal</span><span class="tag">academic</span></div>
-        </div>
-
+        <!-- Fall 2025 -->
         <div class="work-item" data-themes="health personal">
             <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/love-covid-story.pdf', 'Love in the Time of COVID', 'Short Fiction'); return false;">
+                <a href="#" onclick="openPdf('pdfs/love-covid-story.pdf', 'Love in the Time of COVID', 'Fall 2025 · ENGL 370: Race, Health, and Medicine'); return false;">
                     "Love in the Time of COVID"
                 </a>
             </div>
-            <div class="work-meta">Short Fiction</div>
-            <div class="work-description">A coming-of-age queer love story between two teen girls navigating first love, mental illness, and identity during the height of COVID — told through park benches, Instagram DMs, and the distance between them.</div>
+            <div class="work-meta">Fall 2025 · ENGL 370: Race, Health, and Medicine</div>
+            <div class="work-description">A coming-of-age queer love story between two teen girls navigating first love, mental illness, and identity during COVID.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">personal</span></div>
+        </div>
+
+        <!-- Summer 2024 -->
+        <div class="work-item" data-themes="health personal academic">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/much-ado.pdf', 'Much Ado About Postpartum Depression', 'Summer 2024 · ENGL 266H: Science and Literature in London'); return false;">
+                    "Much Ado About Postpartum Depression"
+                </a>
+            </div>
+            <div class="work-meta">Summer 2024 · ENGL 266H: Science and Literature in London</div>
+            <div class="work-description">An epistolary exploration of postpartum depression from the perspective of Hero from Shakespeare's <em>Much Ado About Nothing</em>, reimagined as a new mother in Renaissance Italy. Completed on the Burch Field Research Seminar in Infectious Disease in London.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">personal</span><span class="tag">academic</span></div>
         </div>
 
         <div class="work-item" data-themes="personal">
             <div class="work-title"><a href="https://www.poetrypotion.com/the-story-of-tea-by-sophia-vona/" target="_blank">"The Story of Tea"</a></div>
             <div class="work-meta">Summer 2024 · <a href="https://www.poetrypotion.com/" target="_blank">Poetry Potion</a></div>
+            <div class="work-description">A humorous poem about a family gathering, written after going to "tea" while studying abroad in London.</div>
             <div class="tag-row"><span class="tag">personal</span></div>
         </div>
 
+        <!-- Spring 2024 -->
         <div class="work-item" data-themes="science">
-            <div class="work-title">"Top-Down Processing"</div>
-            <div class="work-meta">Spring 2024 · UNC's Cellar Door</div>
+            <div class="work-title"><a href="https://issuu.com/cellardoorunc/docs/combinedforissuu" target="_blank">"Top-Down Processing"</a></div>
+            <div class="work-meta">Spring 2024 · UNC's Cellar Door · p. 48</div>
+            <div class="work-description">Poem written about how stigma can worm its way in, even when people think they are being unbiased.</div>
             <div class="tag-row"><span class="tag">science</span></div>
+        </div>
+
+        <!-- Fall 2023 -->
+        <div class="work-item" data-themes="health personal">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/Cancer-Scare.pdf', 'The Final Problem', 'Fall 2023 · Poetry'); return false;">
+                    "The Final Problem"
+                </a>
+            </div>
+            <div class="work-meta">Fall 2023 · Poetry</div>
+            <div class="work-description">Poem about my father's cancer scare.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">personal</span></div>
+        </div>
+
+        <!-- Spring 2023 -->
+        <div class="work-item" data-themes="personal">
+            <div class="work-title"><a href="https://heyzine.com/flip-book/9dcc7d6aca.html#page/37" target="_blank">"Mother's Lullaby"</a></div>
+            <div class="work-meta">Spring 2023 · UNC's Monsoon Magazine</div>
+            <div class="work-description">Poem about complex feelings towards someone you care about.</div>
+            <div class="tag-row"><span class="tag">personal</span></div>
         </div>
 
         <div class="work-item" data-themes="personal">
             <div class="work-title">"Blink or You'll Miss it"</div>
-            <div class="work-meta">Spring 2024 · UNC's Monsoon Magazine</div>
-            <div class="tag-row"><span class="tag">personal</span></div>
-        </div>
-
-        <div class="work-item" data-themes="personal">
-            <div class="work-title">"Mother's Lullaby"</div>
-            <div class="work-meta">Spring 2024 · UNC's Monsoon Magazine</div>
-            <div class="tag-row"><span class="tag">personal</span></div>
-        </div>
-
-        <div class="work-item" data-themes="personal">
-            <div class="work-title">"Betrayal"</div>
-            <div class="work-meta">Spring 2024 · UNC's Monsoon Magazine</div>
-            <div class="tag-row"><span class="tag">personal</span></div>
-        </div>
-
-        <div class="work-item" data-themes="health personal">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/Cancer-Scare.pdf', 'Dad\'s Cancer Scare', 'Poetry'); return false;">
-                    "Dad's Cancer Scare"
-                </a>
-            </div>
-            <div class="work-meta">Poetry</div>
-            <div class="tag-row"><span class="tag">health</span><span class="tag">personal</span></div>
-        </div>
-
-        <div class="work-item" data-themes="personal">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/red-flags.pdf', 'Red Flags: On Breaking Up', 'Poetry'); return false;">
-                    "Red Flags: On Breaking Up"
-                </a>
-            </div>
-            <div class="work-meta">Poetry</div>
+            <div class="work-meta">Spring 2023</div>
+            <div class="work-description">A poem about "ideas."</div>
             <div class="tag-row"><span class="tag">personal</span></div>
         </div>
     </div>
 
-    <!-- RESEARCH -->
+    <!-- RESEARCH: newest → oldest -->
     <div id="research" class="section">
         <h2>Research &amp; Conferences</h2>
 
+        <!-- May 2026 -->
         <div class="work-item" data-themes="health science academic">
             <div class="work-title">
                 <a href="#" onclick="openPdf('pdfs/new-experts.pdf', 'The New Experts: Reproducing and Recasting the Cultural Imaginaries of Biomedical Expertise during COVID-19 on the Joe Rogan Podcast', 'May 2026 · Honors Thesis in English and Comparative Lit'); return false;">
@@ -611,42 +667,22 @@
             </div>
             <div class="work-meta">May 2026 · Honors Thesis in English and Comparative Lit</div>
             <div class="work-description">Analysis of the persuasive rhetoric which Joe Rogan scientists and physicians used to advance erroneous claims about COVID and vaccines.</div>
-            <div class="tag-row"><span class="tag">academic</span></div>
-        </div>
-
-        <div class="work-item" data-themes="health science academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/health-securitization.pdf', 'Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy', 'Dec 2024 · PLCY 565: Global Health Law and Policy'); return false;">
-                    "Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy"
-                </a>
-            </div>
-            <div class="work-meta">Dec 2024 · PLCY 565: Global Health Law and Policy</div>
-            <div class="work-description">Final Paper from POLICY 565 combining literary and policy analysis on AMR in global governance.</div>
-            <div class="tag-row"><span class="tag">academic</span></div>
-        </div>
-
-        <div class="work-item" data-themes="health science academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/biol-480-final.pdf', 'Planning for the Next Pandemic', 'BIOL 480 · Final Paper'); return false;">
-                    "Planning for the Next Pandemic"
-                </a>
-            </div>
-            <div class="work-meta">BIOL 480 · Final Paper</div>
-            <div class="work-description">A policy-oriented analysis of pandemic preparedness drawing on COVID-19, smallpox, and cholera, with recommendations on medical mistrust, infrastructure, and global cooperation.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
         </div>
 
+        <!-- April 2026 -->
         <div class="work-item" data-themes="health science academic">
             <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/science-religion-conference-speech.pdf', 'Intermingling Science and Religion in Writings from the Scientific Revolution', 'Conference Presentation · History of Science'); return false;">
-                    "Intermingling Science and Religion in Writings from the Scientific Revolution"
+                <a href="#" onclick="openPdf('pdfs/Sophia_Abstract_HHC__1_.pdf', 'Selective Vulnerabilities: Stigma in Antimicrobial Resistance Narratives in the News', 'April 9, 2026 · SURF Fellowship · International Health Humanities Consortium'); return false;">
+                    "Selective Vulnerabilities: Stigma in Antimicrobial Resistance Narratives in the News"
                 </a>
             </div>
-            <div class="work-meta">Conference Presentation · History of Science</div>
-            <div class="work-description">A slide-based conference talk examining how Galileo, Boyle, and Aldrovandi wove together empirical and theological reasoning, complicating the narrative of linear progress away from religion in science.</div>
+            <div class="work-meta">April 9, 2026 · SURF Fellowship · International Health Humanities Consortium</div>
+            <div class="work-description">A rhetorical and thematic analysis of 363 AMR news articles from UK outlets, examining how the selective construction of vulnerability stigmatizes non-Western populations and minority patients, and calling for new narratives that foster broader, equitable engagement with antimicrobial resistance.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
         </div>
 
+        <!-- Summer 2024 -->
         <div class="work-item" data-themes="health science academic">
             <div class="work-title">
                 <a href="https://our.unc.edu/abstract/vona-the-story-of-superbugs-historical-narratives-of-penicillin-antimicrobial-resistance-at-the-london-science-museum/" target="_blank">
@@ -654,15 +690,20 @@
                 </a>
             </div>
             <div class="work-meta">February 22, 2025 · Triangle Undergraduate Literary Conference (TULC) at Duke</div>
+            <div class="work-description">Project analyzing museums as a site of science communication for AMR, inspired by the Burch Field Research Seminar on Infectious Disease in London.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
         </div>
-    </div>
 
-    <!-- ABOUT -->
-    <div id="about" class="section">
-        <h2>About</h2>
-        <div class="about-card">
-            <p>My writing explores both my health interests and the rest of my life in both academic and non-academic formats.</p>
+        <!-- Fall 2024 -->
+        <div class="work-item" data-themes="health science academic">
+            <div class="work-title">
+                <a href="#" onclick="openPdf('pdfs/health-securitization.pdf', 'Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy', 'Fall 2024 · PLCY 565: Global Health Law and Policy'); return false;">
+                    "Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy"
+                </a>
+            </div>
+            <div class="work-meta">Fall 2024 · PLCY 565: Global Health Law and Policy</div>
+            <div class="work-description">Final paper combining literary and policy analysis on AMR in global governance.</div>
+            <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
         </div>
     </div>
 
@@ -721,7 +762,11 @@
         section.querySelectorAll('.work-item').forEach(item => {
             if (type === 'all') { item.style.display = ''; return; }
             const themes = item.getAttribute('data-themes') || '';
-            item.style.display = themes.includes(type) ? '' : 'none';
+            if (type === 'health-science') {
+                item.style.display = (themes.includes('health') || themes.includes('science')) ? '' : 'none';
+            } else {
+                item.style.display = themes.includes(type) ? '' : 'none';
+            }
         });
     }
 
