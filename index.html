@@ -4,114 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sophia Vona – Writing Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --sage: #6b8f71;
-            --sage-light: #e8f0e9;
-            --sage-mid: #a8c4ab;
-            --cream: #faf8f4;
-            --ink: #1e1e1e;
-            --ink-mid: #3a3228;
-            --ink-light: #7a7060;
-            --warm-white: #ffffff;
-            --border: #ddd8d0;
-            --accent-warm: #c9956a;
+            --cream: #f7f3ee;
+            --cream-mid: #f0e9e0;
+            --cream-dark: #e8ddd2;
+            --ink: #2a1f14;
+            --ink-mid: #5a4a3a;
+            --ink-light: #8a7a6a;
+            --terracotta: #b5845a;
+            --terracotta-light: #f0e8df;
+            --terracotta-dark: #8c6033;
+            --border: #dfd5c8;
+            --white: #fff;
         }
 
         body {
-            font-family: 'Courier New', monospace;
+            font-family: 'Inter', sans-serif;
             background-color: var(--cream);
             color: var(--ink);
             line-height: 1.7;
-            font-size: 17px;
-            font-weight: 500;
+            font-size: 15px;
         }
 
+        /* ── HEADER ── */
         header {
-            background-color: var(--warm-white);
+            background-color: var(--cream);
             border-bottom: 1px solid var(--border);
-            padding: 48px 0 0;
-            text-align: center;
+            padding: 40px 0 0;
         }
 
         .header-inner {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 32px;
+            padding: 0 40px;
         }
 
         .header-top {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 18px;
-            margin-bottom: 28px;
+            gap: 28px;
+            margin-bottom: 32px;
         }
 
         .profile-photo {
-            width: 200px;
-            height: 200px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid var(--sage-mid);
+            border: 3px solid var(--terracotta);
+            flex-shrink: 0;
         }
 
-        h1 {
-            font-size: 2.4em;
-            font-weight: 900;
-            letter-spacing: -0.5px;
+        .header-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6em;
+            font-weight: 600;
             color: var(--ink);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
             margin-bottom: 6px;
         }
 
         .tagline {
-            font-size: 0.95em;
-            color: var(--ink-mid);
+            font-size: 0.88em;
+            color: var(--ink-light);
             font-style: italic;
-            font-weight: 500;
-            max-width: 480px;
-            margin: 0 auto;
             line-height: 1.5;
         }
 
-        nav {
-            border-top: 1px solid var(--border);
-            padding: 0;
-        }
+        /* ── NAV ── */
+        nav { border-top: 1px solid var(--border); }
 
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
-            gap: 0;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 40px;
         }
 
         nav a {
             display: block;
-            padding: 13px 22px;
-            color: var(--ink-mid);
+            padding: 12px 20px;
+            color: var(--ink-light);
             text-decoration: none;
-            font-size: 0.9em;
-            font-weight: 800;
+            font-size: 0.82em;
+            font-weight: 600;
             letter-spacing: 0.06em;
-            border-bottom: 3px solid transparent;
+            text-transform: uppercase;
+            border-top: 2px solid transparent;
             transition: color 0.2s, border-color 0.2s;
         }
 
         nav a:hover { color: var(--ink); }
-        nav a.active { color: var(--sage); border-bottom-color: var(--sage); }
+        nav a.active { color: var(--ink); border-top-color: var(--terracotta); }
 
+        /* ── CONTAINER ── */
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 32px 80px;
+            padding: 36px 40px 80px;
         }
 
+        /* ── FILTER ── */
         .filter-bar {
             display: flex;
             align-items: center;
@@ -121,9 +122,11 @@
         }
 
         .filter-label {
-            font-size: 0.85em;
-            font-weight: 700;
+            font-size: 0.78em;
+            font-weight: 600;
             color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
             margin-right: 4px;
         }
 
@@ -131,96 +134,120 @@
             padding: 5px 14px;
             border-radius: 20px;
             border: 1px solid var(--border);
-            background: var(--warm-white);
+            background: transparent;
             color: var(--ink-mid);
-            font-size: 0.82em;
-            font-weight: 700;
-            font-family: 'Courier New', monospace;
+            font-size: 0.78em;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
             cursor: pointer;
             transition: all 0.15s;
+            letter-spacing: 0.03em;
         }
 
-        .filter-chip:hover { border-color: var(--sage-mid); color: var(--ink); }
-        .filter-chip.active { background: var(--sage); border-color: var(--sage); color: #fff; }
+        .filter-chip:hover { border-color: var(--terracotta); color: var(--ink); }
+        .filter-chip.active { background: var(--terracotta); border-color: var(--terracotta); color: #fff; }
 
+        /* ── SECTION ── */
         .section { display: none; }
         .section.active { display: block; }
 
-        .section h2 {
-            font-size: 1em;
-            font-weight: 800;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1em;
+            font-weight: 400;
+            font-style: italic;
             color: var(--ink-light);
             margin-bottom: 20px;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
             border-bottom: 1px solid var(--border);
+            letter-spacing: 0.02em;
+        }
+
+        /* ── CARD GRID ── */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 14px;
         }
 
         .work-item {
-            background: var(--warm-white);
+            background: var(--white);
             border: 1px solid var(--border);
+            border-top: 2px solid var(--terracotta);
             border-radius: 6px;
-            padding: 20px 24px;
-            margin-bottom: 12px;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            padding: 18px 20px;
+            transition: box-shadow 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
         }
 
         .work-item:hover {
-            border-color: var(--sage-mid);
-            box-shadow: 0 2px 8px rgba(107,143,113,0.08);
+            box-shadow: 0 4px 16px rgba(90,60,30,0.09);
+        }
+
+        .work-date {
+            font-size: 0.72em;
+            color: var(--ink-light);
+            font-family: 'Inter', monospace;
+            letter-spacing: 0.04em;
+            margin-bottom: 5px;
         }
 
         .work-title {
-            font-weight: 800;
-            font-size: 1.02em;
-            margin-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.97em;
+            font-weight: 600;
             color: var(--ink);
+            margin-bottom: 4px;
+            line-height: 1.4;
         }
 
         .work-title a {
             color: var(--ink);
             text-decoration: none;
-            border-bottom: 1px solid var(--border);
-            transition: border-color 0.2s, color 0.2s;
+            transition: color 0.2s;
         }
 
-        .work-title a:hover { color: var(--sage); border-bottom-color: var(--sage); }
+        .work-title a:hover { color: var(--terracotta); }
 
         .work-meta {
-            font-size: 0.84em;
-            font-weight: 600;
+            font-size: 0.78em;
             color: var(--ink-light);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
+            line-height: 1.4;
         }
 
-        .work-meta a { color: var(--ink-light); text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
-        .work-meta a:hover { color: var(--sage); border-bottom-color: var(--sage-mid); }
+        .work-meta a { color: var(--ink-light); text-decoration: none; border-bottom: 1px dotted var(--border); transition: color 0.2s; }
+        .work-meta a:hover { color: var(--terracotta); }
 
         .work-description {
-            font-size: 0.93em;
-            font-weight: 500;
+            font-size: 0.83em;
             color: var(--ink-mid);
-            line-height: 1.55;
+            line-height: 1.6;
+            flex: 1;
         }
 
-        .tag-row { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+        .work-description a { color: var(--terracotta-dark); text-decoration: none; border-bottom: 1px dotted var(--terracotta); }
+        .work-description a:hover { color: var(--terracotta); }
+
+        .tag-row { margin-top: 12px; display: flex; gap: 5px; flex-wrap: wrap; }
 
         .tag {
-            font-size: 0.75em;
-            font-weight: 700;
-            padding: 2px 9px;
+            font-size: 0.7em;
+            font-weight: 600;
+            padding: 2px 8px;
             border-radius: 3px;
-            background: var(--sage-light);
-            color: var(--sage);
-            font-family: 'Courier New', monospace;
+            background: var(--terracotta-light);
+            color: var(--terracotta-dark);
+            letter-spacing: 0.03em;
         }
 
+        /* ── MODAL ── */
         .modal-overlay {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(30,30,30,0.55);
+            background: rgba(42,31,20,0.5);
             z-index: 1000;
             align-items: center;
             justify-content: center;
@@ -230,7 +257,7 @@
         .modal-overlay.open { display: flex; }
 
         .modal {
-            background: var(--warm-white);
+            background: var(--white);
             border-radius: 8px;
             width: 100%;
             max-width: 900px;
@@ -238,20 +265,21 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            box-shadow: 0 12px 40px rgba(42,31,20,0.2);
         }
 
         .modal-header {
-            padding: 16px 20px;
+            padding: 14px 20px;
             border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-shrink: 0;
+            background: var(--cream);
         }
 
         .modal-title {
-            font-weight: 800;
+            font-family: 'Playfair Display', serif;
             font-size: 0.92em;
             color: var(--ink);
             max-width: 720px;
@@ -262,7 +290,7 @@
             background: none;
             border: none;
             cursor: pointer;
-            font-size: 1.5em;
+            font-size: 1.4em;
             color: var(--ink-light);
             line-height: 1;
             padding: 0 4px;
@@ -275,7 +303,7 @@
         .pdf-toolbar {
             padding: 8px 18px;
             border-bottom: 1px solid var(--border);
-            background: #f5f5f2;
+            background: var(--cream-mid);
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -286,23 +314,23 @@
         .pdf-toolbar-group { display: flex; align-items: center; gap: 8px; }
 
         .toolbar-btn {
-            background: none;
+            background: var(--white);
             border: 1px solid var(--border);
             border-radius: 4px;
-            padding: 4px 11px;
-            font-size: 0.8em;
-            font-weight: 700;
-            font-family: 'Courier New', monospace;
+            padding: 4px 12px;
+            font-size: 0.78em;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
             color: var(--ink-mid);
             cursor: pointer;
             transition: all 0.15s;
         }
 
-        .toolbar-btn:hover { border-color: var(--sage-mid); color: var(--ink); }
+        .toolbar-btn:hover { border-color: var(--terracotta); color: var(--ink); }
 
         .toolbar-label {
-            font-size: 0.8em;
-            font-weight: 700;
+            font-size: 0.78em;
+            font-weight: 600;
             color: var(--ink-light);
             white-space: nowrap;
         }
@@ -310,7 +338,7 @@
         .modal-body {
             flex: 1;
             overflow: hidden;
-            background: #e8e8e4;
+            background: #e8e4de;
         }
 
         .modal-body iframe {
@@ -328,13 +356,14 @@
             align-items: center;
             justify-content: space-between;
             flex-shrink: 0;
+            background: var(--cream);
             gap: 12px;
         }
 
         .modal-meta {
-            font-size: 0.8em;
-            font-weight: 600;
-            color: var(--sage);
+            font-size: 0.78em;
+            color: var(--terracotta);
+            font-style: italic;
         }
 
         .download-btn {
@@ -342,12 +371,12 @@
             align-items: center;
             gap: 6px;
             padding: 5px 16px;
-            font-size: 0.8em;
-            font-weight: 700;
-            font-family: 'Courier New', monospace;
-            border: 1px solid var(--sage-mid);
+            font-size: 0.78em;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            border: 1px solid var(--terracotta);
             border-radius: 4px;
-            color: var(--sage);
+            color: var(--terracotta);
             background: transparent;
             cursor: pointer;
             text-decoration: none;
@@ -355,33 +384,26 @@
             flex-shrink: 0;
         }
 
-        .download-btn:hover { background: var(--sage); color: #fff; border-color: var(--sage); }
+        .download-btn:hover { background: var(--terracotta); color: #fff; }
 
-        .about-card {
-            background: var(--warm-white);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 28px 24px;
-        }
-
-        .about-card p { margin-bottom: 14px; color: var(--ink-mid); font-size: 0.95em; font-weight: 500; }
-        .about-card p:last-child { margin-bottom: 0; }
-
+        /* ── FOOTER ── */
         footer {
             text-align: center;
             color: var(--ink-light);
-            font-size: 0.82em;
-            font-weight: 600;
-            padding-top: 30px;
+            font-size: 0.78em;
+            padding-top: 28px;
             border-top: 1px solid var(--border);
+            font-style: italic;
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8em; }
-            .profile-photo { width: 150px; height: 150px; }
-            nav a { padding: 11px 12px; font-size: 0.82em; }
-            .pdf-toolbar { flex-wrap: wrap; gap: 8px; }
-            .header-inner, .container, nav ul { padding-left: 16px; padding-right: 16px; }
+        /* ── RESPONSIVE ── */
+        @media (max-width: 640px) {
+            .header-inner, .container, nav ul { padding-left: 20px; padding-right: 20px; }
+            .header-top { gap: 16px; }
+            .profile-photo { width: 80px; height: 80px; }
+            .header-text h1 { font-size: 2em; }
+            nav a { padding: 10px 12px; font-size: 0.75em; }
+            .card-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -391,9 +413,9 @@
     <div class="header-inner">
         <div class="header-top">
             <img src="2026headshot.jpg" alt="Sophia Vona" class="profile-photo" />
-            <div>
+            <div class="header-text">
                 <h1>Sophia Vona</h1>
-                <p class="tagline">UNC undergrad who majored in English and Biology, with extensive writing and research interests in health humanities.</p>
+                <p class="tagline">Incoming Cambridge · UNC Honors Alumna<br>Premed with extensive writing and research on Health Humanities</p>
             </div>
         </div>
         <nav>
@@ -416,326 +438,247 @@
         <button class="filter-chip" onclick="applyFilter('personal', this)">personal</button>
     </div>
 
-    <!-- ESSAYS: newest → oldest -->
+    <!-- ESSAYS -->
     <div id="essays" class="section active">
-        <h2>Essays</h2>
+        <div class="section-heading">Essays</div>
+        <div class="card-grid">
 
-        <!-- Spring 2026 -->
         <div class="work-item" data-themes="health academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/close-reading.pdf', 'Complex Embodiments in A Body Undone', 'Spring 2026 · ENGL 695: Research Seminar in Disability Studies'); return false;">
-                    "Complex Embodiments in <em>A Body Undone</em>"
-                </a>
-            </div>
-            <div class="work-meta">Spring 2026 · ENGL 695: Research Seminar in Disability Studies</div>
+            <div class="work-date">Spring 2026</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/close-reading.pdf', 'Complex Embodiments in A Body Undone', 'Spring 2026 · ENGL 695: Research Seminar in Disability Studies'); return false;">"Complex Embodiments in <em>A Body Undone</em>"</a></div>
+            <div class="work-meta">ENGL 695: Research Seminar in Disability Studies</div>
             <div class="work-description">A close reading of Christina Crosby's memoir through the dualities of figurative vs. biomedical pain language and externality vs. internality in constructing embodied knowledge after paralysis.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
         </div>
 
         <div class="work-item" data-themes="health academic">
-            <div class="work-title">
-                <a href="https://new.express.adobe.com/webpage/3OqLFynHrlv6f" target="_blank">
-                    "Defining Disability"
-                </a>
-            </div>
-            <div class="work-meta">Spring 2026 · ENGL 695: Research Seminar in Disability Studies</div>
+            <div class="work-date">Spring 2026</div>
+            <div class="work-title"><a href="https://new.express.adobe.com/webpage/3OqLFynHrlv6f" target="_blank">"Defining Disability"</a></div>
+            <div class="work-meta">ENGL 695: Research Seminar in Disability Studies</div>
             <div class="work-description">A historical exploration of how subjective definitions of disability have shifted over time, what these definitions reveal about how we understand the body, and how they impact access — or a lack of access — to resources for individuals with disabilities.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
         </div>
 
         <div class="work-item" data-themes="health academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/sensory-ethnography.pdf', 'A Sensory Ethnography of the HHIVE Lab', 'Spring 2026 · ENGL 695: Research Seminar in Disability Studies'); return false;">
-                    "A Sensory Ethnography of the HHIVE Lab"
-                </a>
-            </div>
-            <div class="work-meta">Spring 2026 · ENGL 695: Research Seminar in Disability Studies</div>
+            <div class="work-date">Spring 2026</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/sensory-ethnography.pdf', 'A Sensory Ethnography of the HHIVE Lab', 'Spring 2026 · ENGL 695: Research Seminar in Disability Studies'); return false;">"A Sensory Ethnography of the HHIVE Lab"</a></div>
+            <div class="work-meta">ENGL 695: Research Seminar in Disability Studies</div>
             <div class="work-description">A sensory ethnography of the HHIVE Lab across three visits, arguing that sound functions as the primary medium through which atmosphere and emplacement are constituted in the space.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
         </div>
 
-        <div class="work-item" data-themes="health science academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/science-religion-conference-speech.pdf', 'Intermingling Science and Religion in Writings from the Scientific Revolution', 'Spring 2026 · ENGL 116: History of Writing'); return false;">
-                    "Intermingling Science and Religion in Writings from the Scientific Revolution"
-                </a>
-            </div>
-            <div class="work-meta">Spring 2026 · ENGL 116: History of Writing</div>
+        <div class="work-item" data-themes="science academic">
+            <div class="work-date">Spring 2026</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/science-religion-conference-speech.pdf', 'Intermingling Science and Religion in Writings from the Scientific Revolution', 'Spring 2026 · ENGL 116: History of Writing'); return false;">"Intermingling Science and Religion in Writings from the Scientific Revolution"</a></div>
+            <div class="work-meta">ENGL 116: History of Writing</div>
             <div class="work-description">A conference talk examining how Galileo, Boyle, and Aldrovandi wove together empirical and theological reasoning, complicating the narrative of linear progress away from religion in science.</div>
             <div class="tag-row"><span class="tag">science</span><span class="tag">academic</span></div>
         </div>
 
         <div class="work-item" data-themes="health academic personal">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/Philosophy_BPSS.pdf', 'Fostering a Philosophy of Empowerment', 'Spring 2026 · Buckley Public Service Scholars'); return false;">
-                    "Fostering a Philosophy of Empowerment"
-                </a>
-            </div>
-            <div class="work-meta">Spring 2026 · Buckley Public Service Scholars</div>
+            <div class="work-date">Spring 2026</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/Philosophy_BPSS.pdf', 'Fostering a Philosophy of Empowerment', 'Spring 2026 · Buckley Public Service Scholars'); return false;">"Fostering a Philosophy of Empowerment"</a></div>
+            <div class="work-meta">Buckley Public Service Scholars</div>
             <div class="work-description">My personal reflection on what the Buckley Public Service Scholars program has taught me about my own commitment to serving others.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span><span class="tag">personal</span></div>
         </div>
 
-        <!-- Fall 2025 — in poetry section -->
-
-        <!-- Fall 2024 -->
         <div class="work-item" data-themes="health science">
-            <div class="work-title">
-                <a href="https://hhive.unc.edu/2024/12/why-interdisciplinarity-matters-reflections-on-studying-abroad-in-london/" target="_blank">
-                    "Why Interdisciplinarity Matters: Reflections on Studying Abroad in London"
-                </a>
-            </div>
-            <div class="work-meta">Fall 2024 · <a href="https://hhive.unc.edu/" target="_blank">HHIVE</a></div>
+            <div class="work-date">Fall 2024</div>
+            <div class="work-title"><a href="https://hhive.unc.edu/2024/12/why-interdisciplinarity-matters-reflections-on-studying-abroad-in-london/" target="_blank">"Why Interdisciplinarity Matters: Reflections on Studying Abroad in London"</a></div>
+            <div class="work-meta"><a href="https://hhive.unc.edu/" target="_blank">HHIVE</a></div>
             <div class="work-description">An exploration of interdisciplinary learning through the lens of international academic experience.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">science</span></div>
         </div>
 
-        <!-- Summer 2024 -->
         <div class="work-item" data-themes="health academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/Engl-266-final.pdf', 'Illness, Death, Annihilation and Virginia Woolf', 'Summer 2024 · ENGL 266H: Science and Literature in London'); return false;">
-                    "Illness, Death, Annihilation and Virginia Woolf"
-                </a>
-            </div>
-            <div class="work-meta">Summer 2024 · ENGL 266H: Science and Literature in London</div>
+            <div class="work-date">Summer 2024</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/Engl-266-final.pdf', 'Illness, Death, Annihilation and Virginia Woolf', 'Summer 2024 · ENGL 266H: Science and Literature in London'); return false;">"Illness, Death, Annihilation and Virginia Woolf"</a></div>
+            <div class="work-meta">ENGL 266H: Science and Literature in London</div>
             <div class="work-description">An examination of how Woolf uses illness as a lens for rediscovery of self and world in <em>Mrs. Dalloway</em> and "On Being Ill," in dialogue with Becker, Freud, and Kleinman on mortality and annihilation. Completed on the Burch Field Research Seminar in Infectious Disease in London.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
         </div>
 
         <div class="work-item" data-themes="health science academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/biol-480-final.pdf', 'Planning for the Next Pandemic', 'Summer 2024 · BIOL 480H: Infectious Disease in London'); return false;">
-                    "Planning for the Next Pandemic"
-                </a>
-            </div>
-            <div class="work-meta">Summer 2024 · BIOL 480H: Infectious Disease in London</div>
+            <div class="work-date">Summer 2024</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/biol-480-final.pdf', 'Planning for the Next Pandemic', 'Summer 2024 · BIOL 480H: Infectious Disease in London'); return false;">"Planning for the Next Pandemic"</a></div>
+            <div class="work-meta">BIOL 480H: Infectious Disease in London</div>
             <div class="work-description">A policy-oriented analysis of pandemic preparedness drawing on COVID-19, smallpox, and cholera, with recommendations on medical mistrust, infrastructure, and global cooperation. Completed on the Burch Field Research Seminar in Infectious Disease in London.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
         </div>
 
-        <!-- Spring 2024 -->
         <div class="work-item" data-themes="health science academic">
-            <div class="work-title">
-                <a href="https://hhive.unc.edu/2024/04/antimicrobial-resistance-efforts-how-were-helping/" target="_blank">
-                    "Antimicrobial Resistance Efforts and How We're Helping"
-                </a>
-            </div>
-            <div class="work-meta">Spring 2024 · <a href="https://hhive.unc.edu/" target="_blank">HHIVE</a></div>
+            <div class="work-date">Spring 2024</div>
+            <div class="work-title"><a href="https://hhive.unc.edu/2024/04/antimicrobial-resistance-efforts-how-were-helping/" target="_blank">"Antimicrobial Resistance Efforts and How We're Helping"</a></div>
+            <div class="work-meta"><a href="https://hhive.unc.edu/" target="_blank">HHIVE</a></div>
             <div class="work-description">Analysis of current antimicrobial resistance initiatives and collaborative solutions.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
         </div>
 
         <div class="work-item" data-themes="health science academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/beyond-biology.pdf', 'Beyond Biology: How Stigma Continues to Shape HIV/AIDS Treatment', 'Spring 2024 · PUBH 420: HIV/AIDS'); return false;">
-                    "Beyond Biology: How Stigma Continues to Shape HIV/AIDS Treatment"
-                </a>
-            </div>
-            <div class="work-meta">Spring 2024 · PUBH 420: HIV/AIDS</div>
+            <div class="work-date">Spring 2024</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/beyond-biology.pdf', 'Beyond Biology: How Stigma Continues to Shape HIV/AIDS Treatment', 'Spring 2024 · PUBH 420: HIV/AIDS'); return false;">"Beyond Biology: How Stigma Continues to Shape HIV/AIDS Treatment"</a></div>
+            <div class="work-meta">PUBH 420: HIV/AIDS</div>
             <div class="work-description">How social stigma surrounding HIV/AIDS has eclipsed biological solutions and continues to drive the epidemic.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
         </div>
 
         <div class="work-item" data-themes="academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/fire-water.pdf', 'Fire or Water? Negating Religious Arguments through Elemental Opposites in Richard II', 'Spring 2024 · ENGL 225H: Shakespeare'); return false;">
-                    "Fire or Water? Negating Religious Arguments through Elemental Opposites in <em>Richard II</em>"
-                </a>
-            </div>
-            <div class="work-meta">Spring 2024 · ENGL 225H: Shakespeare</div>
+            <div class="work-date">Spring 2024</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/fire-water.pdf', 'Fire or Water? Negating Religious Arguments through Elemental Opposites in Richard II', 'Spring 2024 · ENGL 225H: Shakespeare'); return false;">"Fire or Water? Negating Religious Arguments through Elemental Opposites in <em>Richard II</em>"</a></div>
+            <div class="work-meta">ENGL 225H: Shakespeare</div>
             <div class="work-description">A close reading of Shakespeare's fire and water imagery in <em>Richard II</em> to challenge divine right and the question of rebellion.</div>
             <div class="tag-row"><span class="tag">academic</span></div>
         </div>
 
-        <!-- Fall 2023 -->
         <div class="work-item" data-themes="health academic personal">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/This is Not An ACL Story.pdf', '(This is not) An ACL Story', 'Fall 2023 · ENGL 268H: Medicine, Literature and Culture'); return false;">
-                    "(This is not) An ACL Story"
-                </a>
-            </div>
-            <div class="work-meta">Fall 2023 · ENGL 268H: Medicine, Literature and Culture</div>
+            <div class="work-date">Fall 2023</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/This is Not An ACL Story.pdf', '(This is not) An ACL Story', 'Fall 2023 · ENGL 268H: Medicine, Literature and Culture'); return false;">"(This is not) An ACL Story"</a></div>
+            <div class="work-meta">ENGL 268H: Medicine, Literature and Culture</div>
             <div class="work-description">A narrative medicine essay following a friend's ACL injury and the story her medical team missed entirely.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span><span class="tag">personal</span></div>
         </div>
 
-        <!-- Spring 2023 -->
         <div class="work-item" data-themes="health academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/demands of duty.pdf', 'The Generous Demands of Duty', 'Spring 2023 · IDST 124: Pandemics: Ethics, Culture, and Literature'); return false;">
-                    "The Generous Demands of Duty"
-                </a>
-            </div>
-            <div class="work-meta">Spring 2023 · IDST 124: Pandemics: Ethics, Culture, and Literature</div>
+            <div class="work-date">Spring 2023</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/demands of duty.pdf', 'The Generous Demands of Duty', 'Spring 2023 · IDST 124: Pandemics: Ethics, Culture, and Literature'); return false;">"The Generous Demands of Duty"</a></div>
+            <div class="work-meta">IDST 124: Pandemics: Ethics, Culture, and Literature</div>
             <div class="work-description">An argument for a dual duty to individual happiness and collective care, in dialogue with Camus and Tomlinson.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
         </div>
 
         <div class="work-item" data-themes="academic personal">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/Blog-post.pdf', 'Striving towards Democracy', 'Spring 2023 · Blog Essay'); return false;">
-                    "Striving towards Democracy"
-                </a>
-            </div>
-            <div class="work-meta">Spring 2023 · Blog Essay</div>
+            <div class="work-date">Spring 2023</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/Blog-post.pdf', 'Striving towards Democracy', 'Spring 2023 · Blog Essay'); return false;">"Striving towards Democracy"</a></div>
+            <div class="work-meta">Blog Essay</div>
             <div class="work-description">A reflection on democracy as a spectrum and guiding ideal rather than an achievable state, and why language matters.</div>
             <div class="tag-row"><span class="tag">academic</span><span class="tag">personal</span></div>
         </div>
 
-        <!-- Fall 2022 -->
         <div class="work-item" data-themes="health academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/term-paper.pdf', 'All Men Must Die', 'Fall 2022 · RELI 64: Myth, Philosophy and Science'); return false;">
-                    "All Men Must Die"
-                </a>
-            </div>
-            <div class="work-meta">Fall 2022 · RELI 64: Myth, Philosophy and Science</div>
+            <div class="work-date">Fall 2022</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/term-paper.pdf', 'All Men Must Die', 'Fall 2022 · RELI 64: Myth, Philosophy and Science'); return false;">"All Men Must Die"</a></div>
+            <div class="work-meta">RELI 64: Myth, Philosophy and Science</div>
             <div class="work-description">Final essay exploring how multiple knowledge traditions — psychology, philosophy, myth, anthropology, and literature — understand our fear of death.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">academic</span></div>
         </div>
+
+        </div>
     </div>
 
-    <!-- POETRY & CREATIVE WORKS: newest → oldest -->
+    <!-- POETRY & CREATIVE WORKS -->
     <div id="poetry" class="section">
-        <h2>Poetry &amp; Creative Works</h2>
+        <div class="section-heading">Poetry &amp; Creative Works</div>
+        <div class="card-grid">
 
-        <!-- Fall 2025 -->
         <div class="work-item" data-themes="health personal">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/love-covid-story.pdf', 'Love in the Time of COVID', 'Fall 2025 · ENGL 370: Race, Health, and Medicine'); return false;">
-                    "Love in the Time of COVID"
-                </a>
-            </div>
-            <div class="work-meta">Fall 2025 · ENGL 370: Race, Health, and Medicine</div>
+            <div class="work-date">Fall 2025</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/love-covid-story.pdf', 'Love in the Time of COVID', 'Fall 2025 · ENGL 370: Race, Health, and Medicine'); return false;">"Love in the Time of COVID"</a></div>
+            <div class="work-meta">ENGL 370: Race, Health, and Medicine</div>
             <div class="work-description">A coming-of-age queer love story between two teen girls navigating first love, mental illness, and identity during COVID.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">personal</span></div>
         </div>
 
-        <!-- Summer 2024 -->
         <div class="work-item" data-themes="health personal academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/much-ado.pdf', 'Much Ado About Postpartum Depression', 'Summer 2024 · ENGL 266H: Science and Literature in London'); return false;">
-                    "Much Ado About Postpartum Depression"
-                </a>
-            </div>
-            <div class="work-meta">Summer 2024 · ENGL 266H: Science and Literature in London</div>
+            <div class="work-date">Summer 2024</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/much-ado.pdf', 'Much Ado About Postpartum Depression', 'Summer 2024 · ENGL 266H: Science and Literature in London'); return false;">"Much Ado About Postpartum Depression"</a></div>
+            <div class="work-meta">ENGL 266H: Science and Literature in London</div>
             <div class="work-description">An epistolary exploration of postpartum depression from the perspective of Hero from Shakespeare's <em>Much Ado About Nothing</em>, reimagined as a new mother in Renaissance Italy. Completed on the Burch Field Research Seminar in Infectious Disease in London.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">personal</span><span class="tag">academic</span></div>
         </div>
 
         <div class="work-item" data-themes="personal">
+            <div class="work-date">Summer 2024</div>
             <div class="work-title"><a href="https://www.poetrypotion.com/the-story-of-tea-by-sophia-vona/" target="_blank">"The Story of Tea"</a></div>
-            <div class="work-meta">Summer 2024 · <a href="https://www.poetrypotion.com/" target="_blank">Poetry Potion</a></div>
+            <div class="work-meta"><a href="https://www.poetrypotion.com/" target="_blank">Poetry Potion</a></div>
             <div class="work-description">A humorous poem about a family gathering, written after going to "tea" while studying abroad in London.</div>
             <div class="tag-row"><span class="tag">personal</span></div>
         </div>
 
-        <!-- Spring 2024 -->
         <div class="work-item" data-themes="science">
+            <div class="work-date">Spring 2024</div>
             <div class="work-title"><a href="https://issuu.com/cellardoorunc/docs/combinedforissuu" target="_blank">"Top-Down Processing"</a></div>
-            <div class="work-meta">Spring 2024 · UNC's Cellar Door · p. 48</div>
+            <div class="work-meta">UNC's Cellar Door · p. 48</div>
             <div class="work-description">Poem written about how stigma can worm its way in, even when people think they are being unbiased.</div>
             <div class="tag-row"><span class="tag">science</span></div>
         </div>
 
-        <!-- Fall 2023 -->
         <div class="work-item" data-themes="health personal">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/Cancer-Scare.pdf', 'The Final Problem', 'Fall 2023 · Poetry'); return false;">
-                    "The Final Problem"
-                </a>
-            </div>
-            <div class="work-meta">Fall 2023 · Poetry</div>
+            <div class="work-date">Fall 2023</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/Cancer-Scare.pdf', 'The Final Problem', 'Fall 2023 · Poetry'); return false;">"The Final Problem"</a></div>
+            <div class="work-meta">Poetry</div>
             <div class="work-description">Poem about my father's cancer scare.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">personal</span></div>
         </div>
 
-        <!-- Spring 2023 -->
         <div class="work-item" data-themes="personal">
+            <div class="work-date">Spring 2023</div>
             <div class="work-title"><a href="https://heyzine.com/flip-book/9dcc7d6aca.html#page/37" target="_blank">"Mother's Lullaby"</a></div>
-            <div class="work-meta">Spring 2023 · UNC's Monsoon Magazine</div>
+            <div class="work-meta">UNC's Monsoon Magazine</div>
             <div class="work-description">Poem about complex feelings towards someone you care about.</div>
             <div class="tag-row"><span class="tag">personal</span></div>
         </div>
 
         <div class="work-item" data-themes="personal">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/blink.pdf', 'Blink or You\'ll Miss it', 'Spring 2023 · Poetry'); return false;">
-                    "Blink or You'll Miss it"
-                </a>
-            </div>
-            <div class="work-meta">Spring 2023</div>
+            <div class="work-date">Spring 2023</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/blink.pdf', 'Blink or You\'ll Miss it', 'Spring 2023'); return false;">"Blink or You'll Miss it"</a></div>
+            <div class="work-meta">Poetry</div>
             <div class="work-description">A poem about "ideas."</div>
             <div class="tag-row"><span class="tag">personal</span></div>
         </div>
 
-        <!-- Fall 2022 -->
         <div class="work-item" data-themes="personal">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/growing-apart.pdf', 'Growing Apart', 'Fall 2022 · Poetry'); return false;">
-                    "Growing Apart"
-                </a>
-            </div>
-            <div class="work-meta">Fall 2022 · Poetry</div>
+            <div class="work-date">Fall 2022</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/growing-apart.pdf', 'Growing Apart', 'Fall 2022 · Poetry'); return false;">"Growing Apart"</a></div>
+            <div class="work-meta">Poetry</div>
             <div class="work-description">Poem about growing apart from someone.</div>
             <div class="tag-row"><span class="tag">personal</span></div>
         </div>
+
+        </div>
     </div>
 
-    <!-- RESEARCH: newest → oldest -->
+    <!-- RESEARCH -->
     <div id="research" class="section">
-        <h2>Research &amp; Conferences</h2>
+        <div class="section-heading">Research &amp; Conferences</div>
+        <div class="card-grid">
 
-        <!-- May 2026 -->
         <div class="work-item" data-themes="health science academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/new-experts.pdf', 'The New Experts: Reproducing and Recasting the Cultural Imaginaries of Biomedical Expertise during COVID-19 on the Joe Rogan Podcast', 'May 2026 · Honors Thesis in English and Comparative Lit'); return false;">
-                    "The New Experts: Reproducing and Recasting the Cultural Imaginaries of Biomedical Expertise during COVID-19 on the Joe Rogan Podcast"
-                </a>
-            </div>
-            <div class="work-meta">May 2026 · Honors Thesis in English and Comparative Lit</div>
+            <div class="work-date">Defended and Awarded Honors May 2026</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/new-experts.pdf', 'The New Experts: Reproducing and Recasting the Cultural Imaginaries of Biomedical Expertise during COVID-19 on the Joe Rogan Podcast', 'May 2026 · Honors Thesis in English and Comparative Lit'); return false;">"The New Experts: Reproducing and Recasting the Cultural Imaginaries of Biomedical Expertise during COVID-19 on the Joe Rogan Podcast"</a></div>
+            <div class="work-meta">Honors Thesis in English and Comparative Lit</div>
             <div class="work-description">Analysis of the persuasive rhetoric which Joe Rogan scientists and physicians used to advance erroneous claims about COVID and vaccines.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
         </div>
 
-        <!-- April 2026 -->
         <div class="work-item" data-themes="health science academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/Sophia Abstract HHC (1).pdf', 'Selective Vulnerabilities: Stigma in Antimicrobial Resistance Narratives in the News', 'April 9, 2026 · SURF Fellowship · International Health Humanities Consortium'); return false;">
-                    "Selective Vulnerabilities: Stigma in Antimicrobial Resistance Narratives in the News"
-                </a>
-            </div>
-            <div class="work-meta">April 9, 2026 · SURF Fellowship · International Health Humanities Consortium</div>
+            <div class="work-date">Presented at International Health Humanities Consortium, April 9, 2026</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/Sophia Abstract HHC (1).pdf', 'Selective Vulnerabilities: Stigma in Antimicrobial Resistance Narratives in the News', 'April 9, 2026 · SURF Fellowship · International Health Humanities Consortium'); return false;">"Selective Vulnerabilities: Stigma in Antimicrobial Resistance Narratives in the News"</a></div>
+            <div class="work-meta">SURF Fellowship · International Health Humanities Consortium</div>
             <div class="work-description">A rhetorical and thematic analysis of 363 AMR news articles from UK outlets, examining how the selective construction of vulnerability stigmatizes non-Western populations and minority patients, and calling for new narratives that foster broader, equitable engagement with antimicrobial resistance.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
         </div>
 
-        <!-- Summer 2024 -->
         <div class="work-item" data-themes="health science academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/museum.pdf', 'The Story of Superbugs: Historical Narratives of Penicillin &amp; Antimicrobial Resistance at the London Science Museum', 'February 22, 2025 · Triangle Undergraduate Literary Conference (TULC) at Duke'); return false;">
-                    "The Story of Superbugs: Historical Narratives of Penicillin &amp; Antimicrobial Resistance at the London Science Museum"
-                </a>
-            </div>
-            <div class="work-meta">February 22, 2025 · Triangle Undergraduate Literary Conference (TULC) at Duke</div>
-            <div class="work-description">Project analyzing museums as a site of science communication for AMR, inspired by the Burch Field Research Seminar on Infectious Disease in London. Abstract available via the <a href="https://our.unc.edu/abstract/vona-the-story-of-superbugs-historical-narratives-of-penicillin-antimicrobial-resistance-at-the-london-science-museum/" target="_blank">UNC Office of Undergraduate Research</a>. Featured in the UNC Research Office's public-facing journal in Fall 2025: <a href="https://research.unc.edu/story/rethinking-science-communication/" target="_blank">Rethinking Science Communication</a>.</div>
+            <div class="work-date">Presented at TULC at Duke, February 22, 2025</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/museum.pdf', 'The Story of Superbugs: Historical Narratives of Penicillin & Antimicrobial Resistance at the London Science Museum', 'February 22, 2025 · Triangle Undergraduate Literary Conference (TULC) at Duke'); return false;">"The Story of Superbugs: Historical Narratives of Penicillin &amp; Antimicrobial Resistance at the London Science Museum"</a></div>
+            <div class="work-meta">Triangle Undergraduate Literary Conference (TULC) at Duke</div>
+            <div class="work-description">Project analyzing museums as a site of science communication for AMR, inspired by the Burch Field Research Seminar on Infectious Disease in London and presented at Duke's (TULC) conference. Subsequently, presented poster at <a href="https://our.unc.edu/abstract/vona-the-story-of-superbugs-historical-narratives-of-penicillin-antimicrobial-resistance-at-the-london-science-museum/" target="_blank">UNC Celebration of Undergraduate Research</a>. This project was featured in the UNC Research Office's public-facing journal in Fall 2025: <a href="https://research.unc.edu/story/rethinking-science-communication/" target="_blank">Rethinking Science Communication</a>.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
         </div>
 
-        <!-- Fall 2024 -->
         <div class="work-item" data-themes="health science academic">
-            <div class="work-title">
-                <a href="#" onclick="openPdf('pdfs/health-securitization.pdf', 'Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy', 'Fall 2024 · PLCY 565: Global Health Law and Policy'); return false;">
-                    "Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy"
-                </a>
-            </div>
-            <div class="work-meta">Fall 2024 · PLCY 565: Global Health Law and Policy</div>
-            <div class="work-description">Final paper combining literary and policy analysis on AMR in global governance.</div>
+            <div class="work-date">Presented at GillingsX, April 2, 2025</div>
+            <div class="work-title"><a href="#" onclick="openPdf('pdfs/health-securitization.pdf', 'Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy', 'Fall 2024 · PLCY 565: Global Health Law and Policy'); return false;">"Health Securitization and the 2024 Elections: The Past, Present and Future of Antimicrobial Resistance Policy"</a></div>
+            <div class="work-meta">PLCY 565: Global Health Law and Policy</div>
+            <div class="work-description">Final paper combining literary and policy analysis on AMR in global governance. Analyzes how a One Health framework recognizing the interconnection of human, animal, and environmental health has shaped AMR policy debates in the context of the 2024 elections, and how securitization rhetoric influences political will for this underrecognized global threat. Selected for Presentation at GillingsX, April 2, 2025.</div>
             <div class="tag-row"><span class="tag">health</span><span class="tag">science</span><span class="tag">academic</span></div>
+        </div>
+
         </div>
     </div>
 
-    <footer><p>© 2025 Sophia Vona</p></footer>
+    <footer><p>© 2026 Sophia Vona</p></footer>
 </div>
 
 <!-- PDF MODAL -->
